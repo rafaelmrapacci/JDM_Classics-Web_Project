@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,8 +9,10 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="./imgs/favicon.ico">
 </head>
+
 <body>
-    
+    <div id="idShadow" class="shadow"></div>
+
     <header>
         <div class="container">
             <img src="./imgs/logo.png" alt="">
@@ -19,13 +22,12 @@
     <div class="banner">
         <div class="video_wrap">
             <video id="video_jdm" src="./imgs/video_jdm.mp4" autoplay muted loop></video>
-            <div class="card">
-                <h1><b style="color: red;">Japanese</b> Domestic Market</h1>
+            <div class="text_wrap">
             </div>
-            <div class="shadow"></div>
+            <h1><b style="color: red;">Japanese</b><br> Domestic Market</h1>
         </div>
     </div>
-    
+
     <div class="container">
         <div class="img_car">
             <button class="btn_car" onclick="supra1()">←</button>
@@ -36,18 +38,17 @@
     </div>
 
 </body>
+
 </html>
 
 <script>
-
-    video_jdm.play()
 
     function supra2() {
         stock.style.opacity = "0"
         stock.style.width = "0"
         iconic.style.opacity = "1"
         iconic.style.width = "70%"
-        video_jdm.play()
+
     }
 
     function supra1() {
