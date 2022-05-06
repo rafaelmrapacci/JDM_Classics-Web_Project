@@ -1,0 +1,128 @@
+/* possible palette:
+#f1f1f1 - lighter
+#DAD4CE - light
+#2F2E32 - dark
+#222125 - darker */
+
+@import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
+
+@font-face {
+    font-family: 'osaka';
+    src: url(./fonts/osaka-re.ttf) format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f1f1f1;
+}
+
+header {
+    height: 9vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header img {
+    height: 8vh;
+}
+
+header .container {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    border-bottom: solid 2px rgb(34, 33, 37, 0.3);
+    border-radius: 5px;
+}
+
+.banner {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.banner video {
+    height: 70vh;
+    position: relative;
+    top: 6vh;
+    border-radius: 0 80px 0 80px;
+}
+
+.banner .card {
+    width: 30vw;
+    height: 30vh;
+    position: absolute;
+    background-color: rgb(218, 212, 206, 0.7);
+    top: 33vh;
+    left: 10vw;
+    z-index: 2;
+    border-radius: 50px 0 50px 0;
+    padding: 10px;
+    text-align: center;
+}
+
+.banner .card h1 {
+    font-family: 'osaka';
+    font-size: 3.6rem;
+    height: 50%;
+    position: relative;
+    top: 25%;
+    text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
+}
+
+.shadow {
+    position: absolute;
+    width: 63.5%;
+    height: 70vh;
+    left: auto;
+    top: 15vh;
+    z-index: 1;
+    border-radius: 0 80px 0 80px;
+    box-shadow: inset 0px 0px 36px 36px rgba(0,0,0,0.75);
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+}
+
+.img_car {
+    width: 50%;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.car {
+    width: 70%;
+    transition: 0.5s;
+}
+
+.car.iconic {
+    opacity: 0;
+    width: 0;
+}
+
+.btn_car {
+    width: 5%;
+    height: 100px;
+    background-color: transparent;
+    border-radius: 10px 0 10px 0;
+    border-color: transparent;
+    font-size: 3vh;
+    transition: 0.3s ease-in;
+}
+
+.btn_car:hover {
+    background-color: rgb(47, 46, 50, 0.7);
+    color: #f1f1f1;
+    box-shadow: -2px 2px 10px #777;
+}
