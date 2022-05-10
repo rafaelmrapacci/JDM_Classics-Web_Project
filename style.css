@@ -4,16 +4,24 @@
 #2F2E32 - dark
 #222125 - darker */
 
+/* Importar fonte*/
+
 @font-face {
     font-family: 'osaka';
     src: url(./fonts/osaka-re.ttf) format('truetype');
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Reset CSS */
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+/* Index - Header */
 
 body {
     background-color: #f1f1f1;
@@ -44,6 +52,8 @@ header .container {
     z-index: 9;
 }
 
+/* Index - Banner */
+
 .banner {
     width: 100%;
     margin: auto;
@@ -51,11 +61,80 @@ header .container {
     justify-content: center;
 }
 
+.card {
+    display: block;
+    width: 60%;
+    padding: 20px;
+    height: 70vh;
+    top: 12vh;
+    left: 100vw;
+    position: relative;
+    z-index: 4;
+    text-overflow: clip;
+    transition: 0.5s ease;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(14.7px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.content {
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.content h3 {
+    font-family: 'osaka';
+    text-align: center;
+    font-size: 4vh;
+    color: #f1f1f1;
+    text-shadow: 
+    2px 2px 0 black,
+    2px -2px 0 black,
+    -2px 2px 0 black,
+    -2px -2px 0 black,
+    2px 0px 0 black,
+    0px 2px 0 black,
+    -2px 0px 0 black,
+    0px -2px 0 black;
+}
+
+.content p {
+    font-family: 'Poppins', sans-serif;
+    color: #f1f1f1  ;
+    font-size: 2.2vh;
+}
+
+
+.content button {
+    height: 5vh;
+    width: 20%;
+    background-color: #f1f1f1;
+    border: solid 3px #222125;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 2.4vh;
+    color: #222125;
+    transition: 0.3s;
+}
+
+.content button:hover {
+    background-color: #222125;
+    color: #f1f1f1;
+}
+
 .banner video {
     width: 100vw;
     position: absolute;
     top: 0;
     left: 0;
+    border-bottom: solid 3px black;
+    box-shadow: 0 0 20px black;
 }
 
 .video_wrap {
@@ -69,9 +148,11 @@ header .container {
     position: absolute;
     top: 35%;
     left: 17vw;
-    background-color: rgba(255, 255, 255, 0.5);
-    box-shadow: 0 0 50px 50px rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.685);
+    box-shadow: 0 0 50px 50px rgba(0, 0, 0, 0.7);
     z-index: 1;
+    transition: 0.5s ease;
 }
 
 .banner h1 {
@@ -89,10 +170,47 @@ header .container {
     1px 0px 0 white, 
     0px 1px 0 white, 
     -1px 0px 0 white, 
-    0px -1px 0 white;}
+    0px -1px 0 white;
+    cursor: default;
+    transition: 0.5s ease;
+}
 
 .banner h1 b {
     font-size: 15vh;
+    text-shadow: 
+    2px 2px 0 black,
+    2px -2px 0 black,
+    -2px 2px 0 black,
+    -2px -2px 0 black,
+    2px 0px 0 black,
+    0px 2px 0 black,
+    -2px 0px 0 black,
+    0px -2px 0 black;
+}
+
+.banner h2 {
+    color: black;
+    font-size: 10vh;
+    position: absolute;
+    top: 50%;
+    left: 62vw;
+    z-index: 3;
+    font-weight: bolder;
+    text-shadow: 
+    1px 1px 0 white,
+    1px -1px 0 white,
+    -1px 1px 0 white,
+    -1px -1px 0 white,
+    1px 0px 0 white,
+    0px 1px 0 white,
+    -1px 0px 0 white,
+    0px -1px 0 white;
+    transition: 0.5s ease;
+}
+
+.banner h2:hover {
+    color: red;
+    cursor: pointer;
     text-shadow: 
     2px 2px 0 black,
     2px -2px 0 black,
