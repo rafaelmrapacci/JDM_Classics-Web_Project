@@ -11,10 +11,6 @@
 </head>
 
 <body>
-    <!--
-                Tentar fazer funcionar 
-        <div id="idShadow" class="shadow"></div> 
-    -->
 
     <header>
         <div class="container">
@@ -45,11 +41,38 @@
     </div>
 
     <div class="container">
-        <div class="img_car">
-            <button class="btn_car" onclick="supra1()">←</button>
-            <img class="car stock" id="stock" src="./imgs/stockSupraWip.png" alt="">
-            <img class="car iconic" id="iconic" src="./imgs/supra_topSecret.png" alt="">
-            <button class="btn_car" onclick="supra2()">→</button>
+        <div class="carousel_wrap">
+            <h2>1998 MK4 <b style="color: red;">Toyota Supra</b></h2>
+            <div class="img_car">
+                <span class="btn_car" onclick="supra1()" style="color: red;" id="btn_stock_supra">STOCK</span>
+                <img class="car" id="stockSupra" src="./imgs/stockSupraWip.png" alt="">
+                <img class="car iconic" id="iconicSupra" src="./imgs/supra_topSecret.png" alt="">
+                <span class="btn_car" onclick="supra2()" id="btn_iconic_supra">ICONIC</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="carousel_wrap">
+            <h2>1985 <b style="color: red;">Toyota Trueno</b></h2>
+            <div class="img_car">
+                <span class="btn_car" onclick="trueno1()" style="color: red;" id="btn_stock_trueno">STOCK</span>
+                <img class="car" id="stockTrueno" src="./imgs/HOR_XB1_Toyota_Sprinter.webp" alt="">
+                <img class="car iconic" id="iconicTrueno" src="./imgs/trueno_initialD.png" alt="">
+                <span class="btn_car" onclick="trueno2()" id="btn_iconic_trueno">ICONIC</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="carousel_wrap">
+            <h2>1997 <b style="color: red;">Mazda RX7 FD</b></h2>
+            <div class="img_car">
+                <span class="btn_car" onclick="rx71()" style="color: red;" id="btn_stock_rx7">STOCK</span>
+                <img class="car" id="stockRx7" src="./imgs/rx7Stock.png" alt="">
+                <img class="car iconic" id="iconicRx7" src="./imgs/rx7Hans.png" alt="">
+                <span class="btn_car" onclick="rx72()" id="btn_iconic_rx7">ICONIC</span>
+            </div>
         </div>
     </div>
 
@@ -57,37 +80,4 @@
 
 </html>
 
-<script>
-
-    function showMore() {
-        modal.style.left = "30%"
-        textShadow.style.left = "-50vw"
-        title.style.left = "-50vw"
-        more.style.left = "-50vw"
-        video_jdm.pause()
-    }
-
-    function showLess() {
-        modal.style.left = "100vw"
-        textShadow.style.left = "17vw"
-        title.style.left = "20vw"
-        more.style.left = "62vw"
-        video_jdm.play()
-    }
-
-    function supra2() {
-        stock.style.opacity = "0"
-        stock.style.width = "0"
-        iconic.style.opacity = "1"
-        iconic.style.width = "70%"
-
-    }
-
-    function supra1() {
-        stock.style.opacity = "1"
-        stock.style.width = "70%"
-        iconic.style.opacity = "0"
-        iconic.style.width = "0"
-    }
-
-</script>
+<script src="script.js"></script>
