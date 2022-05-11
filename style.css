@@ -75,7 +75,7 @@ header .container {
     background: rgba(255, 255, 255, 0.2);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(14.7px);
+    backdrop-filter: blur(15px);
     border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
@@ -143,10 +143,10 @@ header .container {
 }
 
 .text_wrap {
-    height: 40vh;
+    height: 30vh;
     width: 45%;
     position: absolute;
-    top: 35%;
+    top: 40%;
     left: 17vw;
     border-radius: 20px;
     background-color: rgba(0, 0, 0, 0.685);
@@ -190,12 +190,13 @@ header .container {
 
 .banner h2 {
     color: black;
-    font-size: 10vh;
+    font-size: 15vh;
     position: absolute;
-    top: 50%;
-    left: 62vw;
+    top: 45%;
+    left: 60vw;
     z-index: 3;
     font-weight: bolder;
+    cursor: pointer;
     text-shadow: 
     1px 1px 0 white,
     1px -1px 0 white,
@@ -206,20 +207,32 @@ header .container {
     -1px 0px 0 white,
     0px -1px 0 white;
     transition: 0.5s ease;
+    animation: pulse;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
 }
 
-.banner h2:hover {
-    color: red;
-    cursor: pointer;
-    text-shadow: 
-    2px 2px 0 black,
-    2px -2px 0 black,
-    -2px 2px 0 black,
-    -2px -2px 0 black,
-    2px 0px 0 black,
-    0px 2px 0 black,
-    -2px 0px 0 black,
-    0px -2px 0 black;
+@keyframes pulse {
+    50% {color:  red;
+        text-shadow: 
+        2px 2px 0 black,
+        2px -2px 0 black,
+        -2px 2px 0 black,
+        -2px -2px 0 black,
+        2px 0px 0 black,
+        0px 2px 0 black,
+        -2px 0px 0 black,
+        0px -2px 0 black;}
+    99% {color: black;
+        text-shadow: 
+        1px 1px 0 white,
+        1px -1px 0 white,
+        -1px 1px 0 white,
+        -1px -1px 0 white,
+        1px 0px 0 white,
+        0px 1px 0 white,
+        -1px 0px 0 white,
+        0px -1px 0 white;}
 }
 
 .shadow {
