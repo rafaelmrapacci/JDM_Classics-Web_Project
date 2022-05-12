@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR, en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./imgs/favicon.ico">
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <img src="./imgs/logo.png" alt="">
+        </div>
+    </header>
+
+    <div class="banner">
+        <div class="container form">
+            <div id="id_quiz" class="quiz">
+                <h3>Pergunta 1</h3>
+                <div class="questao">
+                    <span id="id_questao">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum velit illum non aut accusamus sint quod mollitia, perspiciatis, facilis aspernatur ratione voluptate unde, labore exercitationem necessitatibus cum laboriosam. Quisquam, fuga?</span>
+                </div>
+                <div onclick="alter1()" class="alt" id="alt1">a- teste</div>
+                <div onclick="alter2()" class="alt" id="alt2">b- teste</div>
+                <div onclick="alter3()" class="alt" id="alt3">c- teste</div>
+                <div onclick="alter4()" class="alt" id="alt4">d- teste</div>
+            </div>
+        </div>
+        <button onclick="confirm1()">Confirmar Resposta</button>
+    </div>
+
+</body>
+
+<script>
+
+var bancoDeQuestoes = [{
+    pergunta: "Qual o nome do meu tio?",
+    alternativas: ["A - Jose","B - Marcelo","C - Caio","D - Tio"],
+    correta: "D"
+},
+{
+    pergunta: "Qual o nome do meu tio?",
+    alternativas: ["A - Jose","B - Marcelo","C - Caio","D - Tio"],
+    correta: "D"
+}
+]
+
+var questoesAleatorias = []
+for(var i = 0; i < 5; i++) {
+    var numeroAleatorio = Math 
+
+    if (!questoesAleatorias[numeroAleatorio]) {
+        questoesAleatorias.push(bancoDeQuestoes[Math.random() * 5 + 1])
+    } 
+
+}
+
+var resp1 = 0
+var pontuacao = 0
+
+id_questao.innerHTML = questao1.pergunta
+alt1.innerHTML = questao1.alternativas[0]
+alt2.innerHTML = questao1.alternativas[1]
+alt3.innerHTML = questao1.alternativas[2]
+alt4.innerHTML = questao1.alternativas[3]
+
+function alter1() {
+    resp1 = questao1.alternativas[0][0]
+    console.log(resp1)
+}
+
+function alter2() {
+    resp1 = questao1.alternativas[1][0]
+    console.log(resp1)
+}
+
+function alter3() {
+    resp1 = questao1.alternativas[2][0]
+    console.log(resp1)
+}
+
+function alter4() {
+    resp1 = questao1.alternativas[3][0]
+    console.log(resp1)
+}
+
+function confirm1() {
+    if (resp1 == questao1.correta) {
+        id_quiz.style.backgroundColor = "green"
+        pontuacao++
+        console.log(pontuacao)
+    } else {
+        id_quiz.style.backgroundColor = "red"
+        console.log(pontuacao)
+    }
+}
+
+
+</script>
