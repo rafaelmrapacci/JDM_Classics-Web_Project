@@ -77,3 +77,23 @@ function rx71() {
     btn_stock_rx7.style.color = "red"
     btn_iconic_rx7.style.color = "white"
 }
+
+// "Carrosel" GTR
+
+function gtr2() {
+    stockGtr.style.opacity = "0"
+    stockGtr.style.width = "0"
+    iconicGtr.style.opacity = "1"
+    iconicGtr.style.width = "70%"
+    btn_stock_gtr.style.color = "white"
+    btn_iconic_gtr.style.color = "red"
+}
+
+function gtr1() {
+    stockGtr.style.opacity = "1"
+    stockGtr.style.width = "70%"
+    iconicGtr.style.opacity = "0"
+    iconicGtr.style.width = "0"
+    btn_stock_gtr.style.color = "red"
+    btn_iconic_gtr.style.color = "white"
+}
