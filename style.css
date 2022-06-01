@@ -6,14 +6,14 @@
 
 /* Importar fonte*/
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz@8..144&display=swap');
+
 @font-face {
     font-family: 'osaka';
     src: url(./fonts/osaka-re.ttf) format('truetype');
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz@8..144&display=swap');
 
 /* Reset CSS */
 
@@ -289,9 +289,22 @@ header .container {
     transition: 0.5s ease;
 }
 
+.classTopSupra {
+    font-family: Segoe UI; 
+    color: goldenrod; 
+    font-size: 10vh; 
+    transform: rotate(-30deg); 
+    display: none;
+    transition: 0.3s ease-in;
+    position: absolute;
+    left: 15%;
+}
+
 .img_car {
     width: 100%;
-    height: 50vh;
+    height: 35vh;
+    margin-top: 5vh;
+    object-fit: cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -468,7 +481,7 @@ header .container {
 }
 
 .formbox span {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto Flex';
     font-weight: 500;
 }
 

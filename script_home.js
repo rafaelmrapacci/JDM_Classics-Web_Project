@@ -27,6 +27,11 @@ function supra2() {
     iconicSupra.style.width = "70%"
     btn_stock_supra.style.color = "white"
     btn_iconic_supra.style.color = "red"
+    topSupra.style.display = "block"
+    topSupra.style.opacity = "1"
+    setTimeout(() => {
+        topSupra.style.fontSize = "3.8vh"
+    }, 10);
 }
 
 function supra1() {
@@ -36,7 +41,11 @@ function supra1() {
     iconicSupra.style.width = "0"
     btn_stock_supra.style.color = "red"
     btn_iconic_supra.style.color = "white"
-}
+    topSupra.style.opacity = "0"
+    setTimeout(() => {
+        topSupra.style.fontSize = "10vh"
+        topSupra.style.display = "none"
+    }, 300);}
 
 // "Carrosel" Trueno
 
