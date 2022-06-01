@@ -62,8 +62,6 @@ for(var i = 0; i < 5;) {
     }
 }
 
-console.log(numeroAleatorio);
-
 var resp1 = 0
 var pontuacao = 0
 
@@ -74,22 +72,22 @@ alt3.innerHTML = bancoDeQuestoes[0].alternativas[2]
 alt4.innerHTML = bancoDeQuestoes[0].alternativas[3]
 
 function alter1() {
-    resp1 = bancoDeQuestoes[0].alternativas[0]
+    resp1 = bancoDeQuestoes[0].alternativas[0][0]
     console.log(resp1)
 }
 
 function alter2() {
-    resp1 = bancoDeQuestoes[0].alternativas[1]
+    resp1 = bancoDeQuestoes[0].alternativas[1][0]
     console.log(resp1)
 }
 
 function alter3() {
-    resp1 = bancoDeQuestoes[0].alternativas[2]
+    resp1 = bancoDeQuestoes[0].alternativas[2][0]
     console.log(resp1)
 }
 
 function alter4() {
-    resp1 = bancoDeQuestoes[0].alternativas[3]
+    resp1 = bancoDeQuestoes[0].alternativas[3][0]
     console.log(resp1)
 }
 
@@ -100,7 +98,7 @@ function confirm1() {
         console.log(pontuacao)
     } else {
         id_quiz.style.backgroundColor = "red"
-        console.log(pontuacao)
+        console.log(resp1, bancoDeQuestoes[0].correta)
     }
 }
 
