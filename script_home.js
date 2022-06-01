@@ -45,7 +45,8 @@ function supra1() {
     setTimeout(() => {
         topSupra.style.fontSize = "10vh"
         topSupra.style.display = "none"
-    }, 300);}
+    }, 300);
+}
 
 // "Carrosel" Trueno
 
@@ -56,6 +57,11 @@ function trueno2() {
     iconicTrueno.style.width = "70%"
     btn_stock_trueno.style.color = "white"
     btn_iconic_trueno.style.color = "red"
+    iDAE86.style.display = "block"
+    iDAE86.style.opacity = "1"
+    setTimeout(() => {
+        iDAE86.style.width = "10vw"
+    }, 10);
 }
 
 function trueno1() {
@@ -65,6 +71,11 @@ function trueno1() {
     iconicTrueno.style.width = "0"
     btn_stock_trueno.style.color = "red"
     btn_iconic_trueno.style.color = "white"
+    iDAE86.style.opacity = "0"
+    setTimeout(() => {
+        iDAE86.style.width = "30vw"
+        iDAE86.style.display = "none"
+    }, 300);
 }
 
 // "Carrosel" Rx7
@@ -76,6 +87,11 @@ function rx72() {
     iconicRx7.style.width = "70%"
     btn_stock_rx7.style.color = "white"
     btn_iconic_rx7.style.color = "red"
+    FfRx7.style.display = "block"
+    FfRx7.style.opacity = "1"
+    setTimeout(() => {
+        FfRx7.style.fontSize = "3.8vh"
+    }, 10);
 }
 
 function rx71() {
@@ -85,7 +101,13 @@ function rx71() {
     iconicRx7.style.width = "0"
     btn_stock_rx7.style.color = "red"
     btn_iconic_rx7.style.color = "white"
+    FfRx7.style.opacity = "0"
+    setTimeout(() => {
+        FfRx7.style.fontSize = "10vh"
+        FfRx7.style.display = "none"
+    }, 300);
 }
+
 
 // "Carrosel" GTR
 
@@ -96,6 +118,11 @@ function gtr2() {
     iconicGtr.style.width = "70%"
     btn_stock_gtr.style.color = "white"
     btn_iconic_gtr.style.color = "red"
+    tfGTR.style.display = "block"
+    tfGTR.style.opacity = "1"
+    setTimeout(() => {
+        tfGTR.style.fontSize = "3.8vh"
+    }, 10);
 }
 
 function gtr1() {
@@ -105,4 +132,10 @@ function gtr1() {
     iconicGtr.style.width = "0"
     btn_stock_gtr.style.color = "red"
     btn_iconic_gtr.style.color = "white"
+    tfGTR.style.opacity = "0"
+    setTimeout(() => {
+        tfGTR.style.fontSize = "10vh"
+        tfGTR.style.display = "none"
+    }, 300);
 }
+

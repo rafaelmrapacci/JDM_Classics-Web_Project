@@ -44,53 +44,57 @@ var bancoDeQuestoes = [{
     correta: "D"
 },
 {
-    pergunta: "Qual o nome do meu tio?",
-    alternativas: ["A - Jose","B - Marcelo","C - Caio","D - Tio"],
-    correta: "D"
+    pergunta: "Qual o nome da minha tia?",
+    alternativas: ["A - Amanda","B - Diana","C - Tia","D - Calva"],
+    correta: "C"
 }
 ]
 
+var numeroAleatorio = []
 var questoesAleatorias = []
-for(var i = 0; i < 5; i++) {
-    var numeroAleatorio = Math 
 
-    if (!questoesAleatorias[numeroAleatorio]) {
-        questoesAleatorias.push(bancoDeQuestoes[Math.random() * 5 + 1])
-    } 
-
+for(var i = 0; i < 5;) {
+    var numeroAtual = parseInt(Math.random() * 29 + 0);
+    if (!numeroAleatorio.includes(numeroAtual)) {
+        numeroAleatorio.push(numeroAtual)
+        questoesAleatorias.push(bancoDeQuestoes[numeroAleatorio[i]])
+        i++
+    }
 }
+
+console.log(numeroAleatorio);
 
 var resp1 = 0
 var pontuacao = 0
 
-id_questao.innerHTML = questao1.pergunta
-alt1.innerHTML = questao1.alternativas[0]
-alt2.innerHTML = questao1.alternativas[1]
-alt3.innerHTML = questao1.alternativas[2]
-alt4.innerHTML = questao1.alternativas[3]
+id_questao.innerHTML = bancoDeQuestoes[0].pergunta
+alt1.innerHTML = bancoDeQuestoes[0].alternativas[0]
+alt2.innerHTML = bancoDeQuestoes[0].alternativas[1]
+alt3.innerHTML = bancoDeQuestoes[0].alternativas[2]
+alt4.innerHTML = bancoDeQuestoes[0].alternativas[3]
 
 function alter1() {
-    resp1 = questao1.alternativas[0][0]
+    resp1 = bancoDeQuestoes[0].alternativas[0]
     console.log(resp1)
 }
 
 function alter2() {
-    resp1 = questao1.alternativas[1][0]
+    resp1 = bancoDeQuestoes[0].alternativas[1]
     console.log(resp1)
 }
 
 function alter3() {
-    resp1 = questao1.alternativas[2][0]
+    resp1 = bancoDeQuestoes[0].alternativas[2]
     console.log(resp1)
 }
 
 function alter4() {
-    resp1 = questao1.alternativas[3][0]
+    resp1 = bancoDeQuestoes[0].alternativas[3]
     console.log(resp1)
 }
 
 function confirm1() {
-    if (resp1 == questao1.correta) {
+    if (resp1 == bancoDeQuestoes[0].correta) {
         id_quiz.style.backgroundColor = "green"
         pontuacao++
         console.log(pontuacao)
