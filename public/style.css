@@ -585,5 +585,70 @@ header .container {
     background-color: red;
 }
 
+.btn_cadastro.btn_modal {
+    width: 20%;
+    margin-top: 0;
+}
+
+.modal {
+    z-index: 3;
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 300vh;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.4);
+    transition: 0.3s;
+}
+
+.contentModal {
+    position: relative;
+    top: 120vh;
+    border-radius: 22px;
+    margin: auto;
+    background-color: #fff;
+    position: relative;
+    padding: 0;
+    outline: 0;
+    width: 45vw;
+    transition: 0.3s;
+    font-family: 'Roboto Flex';
+}
+
+.contentModal .container {
+    display: flex;
+    height: 12vh;
+    border: 0;
+    justify-content: center;
+}
+
+.contentModal .modalHeader {
+    display: flex;
+    height: 12vh;
+    border: 0;
+    justify-content: center;
+    font-family: 'osaka';
+    color: red;
+    text-shadow:
+    2px 2px 0 black,
+    2px -2px 0 black,
+    -2px 2px 0 black,
+    -2px -2px 0 black,
+    2px 0px 0 black,
+    0px 2px 0 black,
+    -2px 0px 0 black,
+    0px -2px 0 black;
+}
+
+.contentModal .modalFooter {
+    display: flex;
+    height: 12vh;
+    border-radius: 22px;
+    border: 0;
+    justify-content: center;
+    align-items: center;
+}
 
 
