@@ -477,6 +477,7 @@ header .container {
     0px 2px 0 black,
     -2px 0px 0 black,
     0px -2px 0 black;
+    cursor: default;
 }
 
 .cont {
@@ -491,6 +492,9 @@ header .container {
 .cont .formulario {
     height: 90%;
     width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .wrap {
@@ -534,5 +538,52 @@ header .container {
 .formbox span {
     font-family: 'Roboto Flex';
     font-weight: 500;
+    cursor: default;
 }
+
+.btn_cadastro {
+    margin-top: 3vh;
+    height: 7vh;
+    width: 40%;
+    box-shadow:
+        0 0 0 4px red inset,
+        0 0 0 0px black,
+        0 0 0 6px black inset;
+    border-radius: 10px;
+    background-color: transparent;
+    font-family: 'Osaka';
+    font-size: 3vh;
+    text-shadow:
+    2px 2px 0 black,
+    2px -2px 0 black,
+    -2px 2px 0 black,
+    -2px -2px 0 black,
+    2px 0px 0 black,
+    0px 2px 0 black,
+    -2px 0px 0 black,
+    0px -2px 0 black;
+    color: red;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.btn_cadastro:hover {
+    box-shadow:
+        0 0 0 4px black inset,
+        0 0 0 0px white,
+        0 0 0 6px white inset;
+    text-shadow:
+    2px 2px 0 black,
+    2px -2px 0 black,
+    -2px 2px 0 black,
+    -2px -2px 0 black,
+    2px 0px 0 black,
+    0px 2px 0 black,
+    -2px 0px 0 black,
+    0px -2px 0 black;
+    color: white;
+    background-color: red;
+}
+
+
 

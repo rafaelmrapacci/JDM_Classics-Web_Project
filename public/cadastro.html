@@ -26,32 +26,50 @@
                         <div class="wrap pair">
                             <div class="wrap">
                                 <span>Primeiro Nome:</span>
-                                <input type="text">
+                                <input type="text" id="inp_nome">
                             </div>
                             <div class="wrap">
                                 <span style="margin-left: 10%;">Sobrenome:</span>
-                                <input style="margin-left: 10%;" type="text">
+                                <input style="margin-left: 10%;" type="text" id="inp_sobrenome">
                             </div>
                         </div>
                         <div class="wrap">
                             <span>E-Mail:</span>
-                            <input type="text">
+                            <input type="text" id="inp_email">
                         </div>
                         <div class="wrap">
                             <span>Senha:</span>
-                            <input type="text">
+                            <input type="text" id="inp_senha">
                         </div>
                         <div class="wrap">
                             <span>Confirmar senha:</span>
-                            <input type="text">
+                            <input type="text" id="inp_confSenha">
                         </div>
+                        <button class="btn_cadastro" onclick="cadastar()">Confirmar</button>
                 </div>
             </div>
             <div class="cont img"></div>
         </div>
     </div>
-    
-
-
 </body>
 </html>
+
+<script>
+    function cadastar() {
+        var nome = inp_nome.value
+        var sobrenome = inp_sobrenome.value
+        var email = inp_email.value
+        var senha = inp_senha.value
+        var cSenha = inp_confSenha.value
+
+        if (
+            nome == "" ||
+            sobrenome == "" ||
+            email == "" ||
+            senha == "" ||
+            cSenha == "" 
+        ) {
+            return alert("Preencha todos os campos para prosseguir.")
+        }
+    }
+</script>
