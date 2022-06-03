@@ -489,6 +489,11 @@ header .container {
     align-items: center;
 }
 
+.cont.img img {
+    width: 90%;
+    cursor: pointer;
+}
+
 .cont .formulario {
     height: 90%;
     width: 70%;
