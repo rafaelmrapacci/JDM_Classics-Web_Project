@@ -14,7 +14,9 @@
 
     <header>
         <div class="container">
-            <img src="./imgs/logo.png" alt="">
+            <a href="index.html">
+                <img src="./imgs/logo.png" alt="">
+            </a>
         </div>
     </header>
 
@@ -26,16 +28,16 @@
             <div class="container">
                 <p id="modalDesc">Preencha todos os campos para prosseguir!</p>
             </div>
-            <footer id="modalBottom" class="modalFooter">
+            <div id="modalBottom" class="modalFooter">
                 <button class="btn_cadastro btn_modal" onclick="fecharModal()">Fechar</button>
-            </footer>
+            </div>
         </div>
     </div>
 
-    <div class="container cadastro">
+    <div style="border: none" class="container cadastro">
         <div class="formbox">
             <div class="cont form">
-                <div class="formulario">
+                <div id="id_form" class="formulario">
                     <h2>Cadastro</h2>
                         <div class="wrap pair">
                             <div class="wrap">
@@ -69,6 +71,25 @@
             </div>
         </div>
     </div>
+
+    <footer>
+        <span class="descFooter">
+            Projeto Individual desenvolvido por<br> 
+            Rafael Macedo Rapacci
+        </span>
+        <img src="imgs/logo.png" alt="">
+        <div class="socials">
+            <div class="wrapSocial" onclick="goTo('https://www.instagram.com/rafarapacci/')">
+                <img class="imgSocial" style="border-radius: 9px;" src="imgs/instagram.png" alt="" />
+            </div>
+            <div class="wrapSocial" onclick="goTo('https://github.com/Rafael-Macedo-Rapacci')">
+                <img class="imgSocial" style="border-radius: 100%;" src="imgs/github.png" alt="" />
+            </div>
+            <div class="wrapSocial" onclick="goTo('https://www.linkedin.com/in/rafael-rapacci-00932b214/?originalSubdomain=br')">
+                <img class="imgSocial" style="border-radius: 5px;" src="imgs/linkedin.png" alt="" />
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
 
@@ -79,7 +100,6 @@
 var once = false
 
     function cadastar() {
-        var jaCad = false
         var nome = inp_nome.value
         var sobrenome = inp_sobrenome.value
         var email = inp_email.value

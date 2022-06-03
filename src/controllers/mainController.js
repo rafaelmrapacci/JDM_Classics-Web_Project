@@ -51,7 +51,7 @@ function verificar(req, res) {
         res.status(400).send("Seu sobrenome está undefined!");
     } else {
         
-        mainModel.entrar(email, senha)
+        mainModel.verificar(email, senha)
             .then(
                 function (resultado) {
                     console.log(`\nResultados encontrados: ${resultado.length}`);

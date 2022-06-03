@@ -76,7 +76,7 @@
         </div>
     </div>
 
-    <div style="justify-content:flex-end;" class="container">
+    <div style="justify-content:flex-end; border: none;" class="container">
         <div class="carousel_wrap">
             <h2 id="titleGTR"><b id="tfGTR" class="classtfGTR">2 Fast<br>2 Furious</b>1999 <b style="color: red;">Nissan GTR R34</b></h2>
             <div class="img_car">
@@ -88,9 +88,171 @@
         </div>
     </div>
 
+    <footer>
+        <span class="descFooter">
+            Projeto Individual desenvolvido por<br> 
+            Rafael Macedo Rapacci
+        </span>
+        <img src="imgs/logo.png" alt="">
+        <div class="socials">
+            <div class="wrapSocial" onclick="goTo('https://www.instagram.com/rafarapacci/')">
+                <img class="imgSocial" style="border-radius: 9px;" src="imgs/instagram.png" alt="" />
+            </div>
+            <div class="wrapSocial" onclick="goTo('https://github.com/Rafael-Macedo-Rapacci')">
+                <img class="imgSocial" style="border-radius: 100%;" src="imgs/github.png" alt="" />
+            </div>
+            <div class="wrapSocial" onclick="goTo('https://www.linkedin.com/in/rafael-rapacci-00932b214/?originalSubdomain=br')">
+                <img class="imgSocial" style="border-radius: 5px;" src="imgs/linkedin.png" alt="" />
+            </div>
+        </div>
+    </footer>
 
 </body>
 
 </html>
 
-<script src="script_home.js"></script>
+<script src="funcoes.js"></script>
+
+<script>
+// Modal Banner
+
+function showMore() {
+    modal.style.display = "block"
+    setTimeout (()=> {modal.style.left = "30%"}, 10)
+    textShadow.style.left = "-50vw"
+    title.style.left = "-50vw"
+    more.style.left = "-50vw"
+    video_jdm.pause()
+}
+
+function showLess() {
+    modal.style.left = "100vw"
+    setTimeout (()=> {modal.style.display = "none"}, 500)
+    textShadow.style.left = "17vw"
+    title.style.left = "20vw"
+    more.style.left = "62vw"
+    video_jdm.play()
+}
+
+// "Carrosel" Supra
+
+function supra2() {
+    stockSupra.style.opacity = "0"
+    stockSupra.style.width = "0"
+    iconicSupra.style.opacity = "1"
+    iconicSupra.style.width = "70%"
+    btn_stock_supra.style.color = "white"
+    btn_iconic_supra.style.color = "red"
+    topSupra.style.display = "block"
+    topSupra.style.opacity = "1"
+    setTimeout(() => {
+        topSupra.style.fontSize = "3.8vh"
+    }, 10);
+}
+
+function supra1() {
+    stockSupra.style.opacity = "1"
+    stockSupra.style.width = "70%"
+    iconicSupra.style.opacity = "0"
+    iconicSupra.style.width = "0"
+    btn_stock_supra.style.color = "red"
+    btn_iconic_supra.style.color = "white"
+    topSupra.style.opacity = "0"
+    setTimeout(() => {
+        topSupra.style.fontSize = "10vh"
+        topSupra.style.display = "none"
+    }, 300);
+}
+
+// "Carrosel" Trueno
+
+function trueno2() {
+    stockTrueno.style.opacity = "0"
+    stockTrueno.style.width = "0"
+    iconicTrueno.style.opacity = "1"
+    iconicTrueno.style.width = "70%"
+    btn_stock_trueno.style.color = "white"
+    btn_iconic_trueno.style.color = "red"
+    iDAE86.style.display = "block"
+    iDAE86.style.opacity = "1"
+    setTimeout(() => {
+        iDAE86.style.width = "10vw"
+    }, 10);
+}
+
+function trueno1() {
+    stockTrueno.style.opacity = "1"
+    stockTrueno.style.width = "70%"
+    iconicTrueno.style.opacity = "0"
+    iconicTrueno.style.width = "0"
+    btn_stock_trueno.style.color = "red"
+    btn_iconic_trueno.style.color = "white"
+    iDAE86.style.opacity = "0"
+    setTimeout(() => {
+        iDAE86.style.width = "30vw"
+        iDAE86.style.display = "none"
+    }, 300);
+}
+
+// "Carrosel" Rx7
+
+function rx72() {
+    stockRx7.style.opacity = "0"
+    stockRx7.style.width = "0"
+    iconicRx7.style.opacity = "1"
+    iconicRx7.style.width = "70%"
+    btn_stock_rx7.style.color = "white"
+    btn_iconic_rx7.style.color = "red"
+    FfRx7.style.display = "block"
+    FfRx7.style.opacity = "1"
+    setTimeout(() => {
+        FfRx7.style.fontSize = "3.8vh"
+    }, 10);
+}
+
+function rx71() {
+    stockRx7.style.opacity = "1"
+    stockRx7.style.width = "70%"
+    iconicRx7.style.opacity = "0"
+    iconicRx7.style.width = "0"
+    btn_stock_rx7.style.color = "red"
+    btn_iconic_rx7.style.color = "white"
+    FfRx7.style.opacity = "0"
+    setTimeout(() => {
+        FfRx7.style.fontSize = "10vh"
+        FfRx7.style.display = "none"
+    }, 300);
+}
+
+
+// "Carrosel" GTR
+
+function gtr2() {
+    stockGtr.style.opacity = "0"
+    stockGtr.style.width = "0"
+    iconicGtr.style.opacity = "1"
+    iconicGtr.style.width = "70%"
+    btn_stock_gtr.style.color = "white"
+    btn_iconic_gtr.style.color = "red"
+    tfGTR.style.display = "block"
+    tfGTR.style.opacity = "1"
+    setTimeout(() => {
+        tfGTR.style.fontSize = "3.8vh"
+    }, 10);
+}
+
+function gtr1() {
+    stockGtr.style.opacity = "1"
+    stockGtr.style.width = "70%"
+    iconicGtr.style.opacity = "0"
+    iconicGtr.style.width = "0"
+    btn_stock_gtr.style.color = "red"
+    btn_iconic_gtr.style.color = "white"
+    tfGTR.style.opacity = "0"
+    setTimeout(() => {
+        tfGTR.style.fontSize = "10vh"
+        tfGTR.style.display = "none"
+    }, 300);
+}
+
+</script>

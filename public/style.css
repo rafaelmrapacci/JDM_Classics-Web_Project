@@ -25,7 +25,7 @@
     box-sizing: border-box;
 }
 
-/* Index - Header */
+/* Index - Header/Footer */
 
 body {
     background-color: #f1f1f1;
@@ -55,6 +55,53 @@ header .container {
     box-shadow: 0 2px 6px black;
     position: fixed;
     z-index: 9;
+}
+
+footer {
+    height: 10vh;
+    width: 100%;
+    background-color: #222125;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: solid 2px black;
+}
+
+footer img {
+    height: 10vh;
+}
+
+.descFooter {
+    font-family: 'Poppins';
+    color: white;
+    font-size: 2vh;
+    margin-left: 5vw;
+}
+
+.socials {
+    display: flex;
+    height: 10vh;
+    width: 20%;
+    justify-content: space-around;
+    margin-right: 5vw;
+}
+
+.wrapSocial {
+    height: 10vh;
+    cursor: pointer;
+}
+
+.wrapSocial:hover>.imgSocial {
+    top: 1vh;
+    box-shadow:
+    0 0 10px 3px #fff;
+}
+
+.imgSocial{
+    height: 5vh;
+    position: relative;
+    top: 2.5vh;
+    transition: 0.3s;
 }
 
 /* Index - Banner */
@@ -550,24 +597,14 @@ header .container {
     margin-top: 3vh;
     height: 7vh;
     width: 40%;
+    border: none;
     box-shadow:
-        0 0 0 4px red inset,
-        0 0 0 0px black,
-        0 0 0 6px black inset;
+        0 0 0 4px red inset;
     border-radius: 10px;
     background-color: transparent;
     font-family: 'Osaka';
     font-size: 3vh;
-    text-shadow:
-    2px 2px 0 black,
-    2px -2px 0 black,
-    -2px 2px 0 black,
-    -2px -2px 0 black,
-    2px 0px 0 black,
-    0px 2px 0 black,
-    -2px 0px 0 black,
-    0px -2px 0 black;
-    color: red;
+    color: black;
     transition: 0.3s ease;
     cursor: pointer;
 }

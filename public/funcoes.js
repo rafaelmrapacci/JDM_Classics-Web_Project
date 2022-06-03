@@ -14,3 +14,7 @@ function fecharModal() {
         id_modal.style.top = "0"
     }, 300);
 }
+
+function goTo(site) {
+    window.open(site)
+}
