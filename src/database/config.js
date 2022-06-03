@@ -1,10 +1,10 @@
 var sql = require('mssql');
 
 var sqlServerConfig = {
-    server: "SEU_SERVIDOR",
-    database: "SEU_BANCO_DE_DADOS",
-    user: "SEU_USUARIO",
-    password: "SUA_SENHA",
+    server: "svr-acquatec-grupo2.database.windows.net",
+    database: "acquatec",
+    user: "admin-acquatec-2",
+    password: "#Gfgrupo2",
     pool: {
         max: 10,
         min: 0,

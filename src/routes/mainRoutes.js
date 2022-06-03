@@ -11,4 +11,8 @@ router.post("/entrar", function (req, res) {
     controller.entrar(req, res);
 });
 
+router.post("/verificar", function (req, res) {
+    controller.verificar(req, res)
+});
+
 module.exports = router;

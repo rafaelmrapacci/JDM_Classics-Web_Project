@@ -73,6 +73,7 @@
 <script>
 
     function cadastar() {
+        var jaCad = false
         var nome = inp_nome.value
         var sobrenome = inp_sobrenome.value
         var email = inp_email.value
@@ -99,56 +100,33 @@
             return abrirModal()
         }
 
-        fetch("/mainRoutes/entrar", {
+        fetch("/mainRoutes/verificar", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
+                nomeServer: nome,
+                sobrenomeServer: sobrenome,
                 emailServer: email,
                 senhaServer: senha
             })
         }).then(function (resposta) {
-            console.log("ESTOU NO THEN DO entrar()!")
-            if (resposta.length > 0) {
-                modalDesc.innerHTML = "E-Mail já cadastrado!"
-                return abrirModal()
-            }
+            resposta.json().then(json => {
+                if (!(json.idUsuario == "")) {
+                    modalDesc.innerHTML = "E-Mail já cadastrado!"
+                    return abrirModal()
+                }
+            })
+            modalTitle.innerHTML = "Sucesso!";
+            modalDesc.innerHTML = "Cadastro realizado com sucesso!";
+            // modalBottom.innerHTML = ""
+            abrirModal()
+            // window.location(login.html)
         })
         .catch(function (erro) {
         console.log(erro);
-        });
-
-
-        fetch("/mainRoutes/cadastrar", {
-            method: "POST",
-            headers: {
-            "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-            nomeServer: nome,
-            sobrenomeServer: sobrenome,
-            emailServer: email,
-            senhaServer: senha
-            })
-        }).then(function (resposta) {
-            console.log("resposta: ", resposta);
-
-            if (resposta.ok) {
-                modalTitle.innerHTML = "Sucesso!";
-                modalDesc.innerHTML = "Cadastro realizado com sucesso!";
-                modalBottom.innerHTML = ""
-                abrirModal()
-                // window.location(login.html)
-            } else {
-                modalDesc.innerHTML = `Não foi possível realizar seu cadastro`;
-                abrirModal()
-            }
-        })
-        .catch(function (resposta) {
-          console.log(`#ERRO: ${resposta}`);
-        });
-
+        });     
     }
 
 </script>
