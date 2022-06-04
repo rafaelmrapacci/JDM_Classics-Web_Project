@@ -33,6 +33,7 @@
 body {
     background-color: #f1f1f1;
     overflow-x: hidden;
+    width: 100vw;
 }
 
 header {
@@ -346,11 +347,6 @@ footer {
     transition: 0.5s ease;
 }
 
-.container.menu {
-    width: 20%;
-    border: 1px solid red;
-}
-
 .classTopSupra {
     font-family: Segoe UI; 
     color: goldenrod; 
@@ -459,6 +455,73 @@ footer {
     color: red;
 }
 
+.menu {
+    height: 100%;
+    width: 10vw;
+    margin: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.containerContentCars {
+    height: 100%;
+    width: 40%;
+    display: flex;
+    align-items: center;
+}
+
+.conteudo {
+    height: 100%;
+    width: 100%;
+    display: none;
+    opacity: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: 0.4s ease;
+    left: 50vw;
+}
+
+.conteudoShown {
+    left: 0;
+    opacity: 1;
+}
+
+.conteudo h2 {
+    font-family: 'osaka';
+    font-size: 4vh;
+    color: #f1f1f1;
+    width: 100%;
+    text-align: center;
+    text-shadow:
+    2px 2px 0 black,
+    2px -2px 0 black,
+    -2px 2px 0 black,
+    -2px -2px 0 black,
+    2px 0px 0 black,
+    0px 2px 0 black,
+    -2px 0px 0 black,
+    0px -2px 0 black;
+    cursor: default;
+}
+
+.conteudo span {
+    height: 64%;
+    width: 80%;
+    font-size: 2.5vh;
+    font-family: 'Poppins';
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 4vh;
+}
+
+.classMotor {
+    height: 64%;
+}
 
 /* Quiz */
 
@@ -609,7 +672,7 @@ footer {
 .btn_cadastro {
     margin-top: 3vh;
     height: 7vh;
-    width: 40%;
+    width: 10vw;
     border: none;
     box-shadow:
         0 0 0 4px red inset;
@@ -641,9 +704,11 @@ footer {
 }
 
 .btn_cadastro.btn_modal {
-    width: 20%;
+    width: 8vw;
     margin-top: 0;
 }
+
+/* Modal */
 
 .modal {
     z-index: 3;

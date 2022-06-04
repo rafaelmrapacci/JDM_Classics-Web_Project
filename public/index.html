@@ -44,28 +44,54 @@
         <div class="carousel_wrap">
             <h2 id="titleSupra"><b id="topSupra" class="classTopSupra">TOP SECRET</b>1998 MK4 <b style="color: red;">Toyota Supra</b></h2>
             <div class="img_car">
-                <span class="btn_car" onclick="supra1()" style="color: red;" id="btn_stock_supra">STOCK</span>
+                <span class="btn_car" onclick="carro1('stockSupra', 'iconicSupra', 'btn_stock_supra', 'btn_iconic_supra', 'topSupra', '10vh')" style="color: red;" id="btn_stock_supra">STOCK</span>
                 <img class="car" id="stockSupra" src="./imgs/stockSupraWip.png" alt="">
                 <img class="car iconic" id="iconicSupra" src="./imgs/supra_topSecret.png" alt="">
-                <span class="btn_car" onclick="supra2()" id="btn_iconic_supra">ICONIC</span>
+                <span class="btn_car" onclick="carro2('stockSupra', 'iconicSupra', 'btn_stock_supra', 'btn_iconic_supra', 'topSupra', '3.8vh')" id="btn_iconic_supra">ICONIC</span>
             </div>
         </div>
-        <div class="container menu">
-            <button>Motor</button>
-            <button>Specs</button>
-            <button>História</button>
+        <div id="menuBtnsSupra" class="menu">
+            <button onclick="showContent('motorSupra', 'specsSupra', 'historySupra')" class="btn_cadastro">Motor</button>
+            <button onclick="showContent('specsSupra', 'motorSupra', 'historySupra')" class="btn_cadastro">Specs</button>
+            <button onclick="showContent('historySupra', 'specsSupra', 'motorSupra')" class="btn_cadastro">História</button>
+        </div>
+        <div class="containerContentCars">
+            <div id="motorSupra" class="conteudo">
+                <h2>3.0L 2jz GTE VVT-i V6</h2>
+                <img class="classMotor" src="imgs/2jz(shadow).png" alt="">
+            </div>
+            <div id="specsSupra" style="display: flex;" class="conteudo">
+                <h2>Specs</h2>
+                <span>
+                    - Engine: 3.0L Sequential Turbo Straight Six; <br>
+                    - Transmission: 6-Speed Manual, or 4-Speed Automatic; <br>
+                    - Horsepower: 321 hp; <br>
+                    - Torque: 315 lb-ft; <br>
+                    - 0-60 mph: 4.7s; <br>
+                    - 1/4 mile: 13.1s @109 mph; <br>
+                    - Top Speed: 177 mph.
+                </span>
+            </div>
+            <div id="historySupra" class="conteudo">
+
+            </div>
         </div>
     </div>
 
-    <div style="justify-content:flex-end;" class="container">
+    <div style="flex-direction: row-reverse;" class="container">
         <div class="carousel_wrap">
             <h2 id="titleRX7"><b id="FfRx7" class="classFfRx7">Fast &<br>Furious</b>1997 <b style="color: red;">Mazda RX7 FD</b></h2>
             <div class="img_car">
-                <span class="btn_car" onclick="rx71()" style="color: red;" id="btn_stock_rx7">STOCK</span>
+                <span class="btn_car" onclick="carro1('stockRx7', 'iconicRx7', 'btn_stock_rx7', 'btn_iconic_rx7', 'FfRx7', '10vh')"" style="color: red;" id="btn_stock_rx7">STOCK</span>
                 <img class="car" id="stockRx7" src="./imgs/rx7Stock.png" alt="">
                 <img class="car iconic" id="iconicRx7" src="./imgs/rx7Hans.png" alt="">
-                <span class="btn_car" onclick="rx72()" id="btn_iconic_rx7">ICONIC</span>
+                <span class="btn_car" onclick="carro2('stockRx7', 'iconicRx7', 'btn_stock_rx7', 'btn_iconic_rx7', 'FfRx7', '3.8vh')" id="btn_iconic_rx7">ICONIC</span>
             </div>
+        </div>
+        <div id="menuBtnsRx7" class="menu">
+            <button class="btn_cadastro">Motor</button>
+            <button class="btn_cadastro">Specs</button>
+            <button class="btn_cadastro">História</button>
         </div>
     </div>
 
@@ -73,23 +99,33 @@
         <div class="carousel_wrap">
             <h2 id="titleTrueno" ><img src="imgs/initialDLogo.svg" id="iDAE86" class="classiDAE86">1985 <b style="color: red;">Toyota Trueno</b></h2>
             <div class="img_car">
-                <span class="btn_car" onclick="trueno1()" style="color: red;" id="btn_stock_trueno">STOCK</span>
+                <span class="btn_car" onclick="carro1('stockTrueno', 'iconicTrueno', 'btn_stock_trueno', 'btn_iconic_trueno', 'iDAE86', '30vw')" style="color: red;" id="btn_stock_trueno">STOCK</span>
                 <img class="car" id="stockTrueno" src="./imgs/HOR_XB1_Toyota_Sprinter.webp" alt="">
                 <img class="car iconic" id="iconicTrueno" src="./imgs/trueno_initialD.png" alt="">
-                <span class="btn_car" onclick="trueno2()" id="btn_iconic_trueno">ICONIC</span>
+                <span class="btn_car" onclick="carro2('stockTrueno', 'iconicTrueno', 'btn_stock_trueno', 'btn_iconic_trueno', 'iDAE86', '10vw')" id="btn_iconic_trueno">ICONIC</span>
             </div>
+        </div>
+        <div id="menuBtnsTrueno" class="menu">
+            <button class="btn_cadastro">Motor</button>
+            <button class="btn_cadastro">Specs</button>
+            <button class="btn_cadastro">História</button>
         </div>
     </div>
 
-    <div style="justify-content:flex-end; border: none;" class="container">
+    <div style="flex-direction: row-reverse; border: none;" class="container">
         <div class="carousel_wrap">
             <h2 id="titleGTR"><b id="tfGTR" class="classtfGTR">2 Fast<br>2 Furious</b>1999 <b style="color: red;">Nissan GTR R34</b></h2>
             <div class="img_car">
-                <span class="btn_car" onclick="gtr1()" style="color: red;" id="btn_stock_gtr">STOCK</span>
+                <span class="btn_car" onclick="carro1('stockGtr', 'iconicGtr', 'btn_stock_gtr', 'btn_iconic_gtr', 'tfGTR', '10vh')" style="color: red;" id="btn_stock_gtr">STOCK</span>
                 <img class="car" id="stockGtr" src="./imgs/GTRstock.png" alt="">
                 <img class="car iconic" id="iconicGtr" src="./imgs/GTRfef.png" alt="">
-                <span class="btn_car" onclick="gtr2()" id="btn_iconic_gtr">ICONIC</span>
+                <span class="btn_car" onclick="carro2('stockGtr', 'iconicGtr', 'btn_stock_gtr', 'btn_iconic_gtr', 'tfGTR', '3.8vh')" id="btn_iconic_gtr">ICONIC</span>
             </div>
+        </div>
+        <div id="menuBtnsGTR" class="menu">
+            <button class="btn_cadastro">Motor</button>
+            <button class="btn_cadastro">Specs</button>
+            <button class="btn_cadastro">História</button>
         </div>
     </div>
 
@@ -119,6 +155,7 @@
 <script src="funcoes.js"></script>
 
 <script>
+    
 // Modal Banner
 
 function showMore() {
@@ -139,125 +176,55 @@ function showLess() {
     video_jdm.play()
 }
 
-// "Carrosel" Supra
+// "Carrosel"
 
-function supra2() {
-    stockSupra.style.opacity = "0"
-    stockSupra.style.width = "0"
-    iconicSupra.style.opacity = "1"
-    iconicSupra.style.width = "70%"
-    btn_stock_supra.style.color = "white"
-    btn_iconic_supra.style.color = "red"
-    topSupra.style.display = "block"
-    topSupra.style.opacity = "1"
+function carro2(stockCar, iconicCar, btn_stock, btn_iconic, titleIconic, wdTitleShown) {
+    document.getElementById(stockCar).style.opacity = "0"
+    document.getElementById(stockCar).style.width = "0"
+    document.getElementById(iconicCar).style.opacity = "1"
+    document.getElementById(iconicCar).style.width = "70%"
+    document.getElementById(btn_stock).style.color = "white"
+    document.getElementById(btn_iconic).style.color = "red"
+    document.getElementById(titleIconic).style.display = "block"
+    document.getElementById(titleIconic).style.opacity = "1"
     setTimeout(() => {
-        topSupra.style.fontSize = "3.8vh"
+        if (titleIconic == "iDAE86") {
+            document.getElementById(titleIconic).style.width = wdTitleShown
+        } else {
+            document.getElementById(titleIconic).style.fontSize = wdTitleShown
+        }
     }, 10);
 }
 
-function supra1() {
-    stockSupra.style.opacity = "1"
-    stockSupra.style.width = "70%"
-    iconicSupra.style.opacity = "0"
-    iconicSupra.style.width = "0"
-    btn_stock_supra.style.color = "red"
-    btn_iconic_supra.style.color = "white"
-    topSupra.style.opacity = "0"
+function carro1(stockCar, iconicCar, btn_stock, btn_iconic, titleIconic, wdTitleHidden) {
+    document.getElementById(stockCar).style.opacity = "1"
+    document.getElementById(stockCar).style.width = "70%"
+    document.getElementById(iconicCar).style.opacity = "0"
+    document.getElementById(iconicCar).style.width = "0"
+    document.getElementById(btn_stock).style.color = "red"
+    document.getElementById(btn_iconic).style.color = "white"
+    document.getElementById(titleIconic).style.opacity = "0"
     setTimeout(() => {
-        topSupra.style.fontSize = "10vh"
-        topSupra.style.display = "none"
+        if (titleIconic == "iDAE86") {
+            document.getElementById(titleIconic).style.width = wdTitleShown
+        } else {
+            document.getElementById(titleIconic).style.fontSize = wdTitleHidden
+            document.getElementById(titleIconic).style.display = "none"
+        }
     }, 300);
 }
 
-// "Carrosel" Trueno
+// Menu
 
-function trueno2() {
-    stockTrueno.style.opacity = "0"
-    stockTrueno.style.width = "0"
-    iconicTrueno.style.opacity = "1"
-    iconicTrueno.style.width = "70%"
-    btn_stock_trueno.style.color = "white"
-    btn_iconic_trueno.style.color = "red"
-    iDAE86.style.display = "block"
-    iDAE86.style.opacity = "1"
+function showContent(mostrar, sumir1, sumir2) {
+    document.getElementById(mostrar).style.display = "flex"
+    document.getElementById(sumir1).classList.remove("conteudoShown")
+    document.getElementById(sumir2).classList.remove("conteudoShown")
     setTimeout(() => {
-        iDAE86.style.width = "10vw"
-    }, 10);
-}
-
-function trueno1() {
-    stockTrueno.style.opacity = "1"
-    stockTrueno.style.width = "70%"
-    iconicTrueno.style.opacity = "0"
-    iconicTrueno.style.width = "0"
-    btn_stock_trueno.style.color = "red"
-    btn_iconic_trueno.style.color = "white"
-    iDAE86.style.opacity = "0"
-    setTimeout(() => {
-        iDAE86.style.width = "30vw"
-        iDAE86.style.display = "none"
-    }, 300);
-}
-
-// "Carrosel" Rx7
-
-function rx72() {
-    stockRx7.style.opacity = "0"
-    stockRx7.style.width = "0"
-    iconicRx7.style.opacity = "1"
-    iconicRx7.style.width = "70%"
-    btn_stock_rx7.style.color = "white"
-    btn_iconic_rx7.style.color = "red"
-    FfRx7.style.display = "block"
-    FfRx7.style.opacity = "1"
-    setTimeout(() => {
-        FfRx7.style.fontSize = "3.8vh"
-    }, 10);
-}
-
-function rx71() {
-    stockRx7.style.opacity = "1"
-    stockRx7.style.width = "70%"
-    iconicRx7.style.opacity = "0"
-    iconicRx7.style.width = "0"
-    btn_stock_rx7.style.color = "red"
-    btn_iconic_rx7.style.color = "white"
-    FfRx7.style.opacity = "0"
-    setTimeout(() => {
-        FfRx7.style.fontSize = "10vh"
-        FfRx7.style.display = "none"
-    }, 300);
-}
-
-
-// "Carrosel" GTR
-
-function gtr2() {
-    stockGtr.style.opacity = "0"
-    stockGtr.style.width = "0"
-    iconicGtr.style.opacity = "1"
-    iconicGtr.style.width = "70%"
-    btn_stock_gtr.style.color = "white"
-    btn_iconic_gtr.style.color = "red"
-    tfGTR.style.display = "block"
-    tfGTR.style.opacity = "1"
-    setTimeout(() => {
-        tfGTR.style.fontSize = "3.8vh"
-    }, 10);
-}
-
-function gtr1() {
-    stockGtr.style.opacity = "1"
-    stockGtr.style.width = "70%"
-    iconicGtr.style.opacity = "0"
-    iconicGtr.style.width = "0"
-    btn_stock_gtr.style.color = "red"
-    btn_iconic_gtr.style.color = "white"
-    tfGTR.style.opacity = "0"
-    setTimeout(() => {
-        tfGTR.style.fontSize = "10vh"
-        tfGTR.style.display = "none"
-    }, 300);
+        document.getElementById(mostrar).classList.add("conteudoShown")
+    }, 50);
+    document.getElementById(sumir1).style.display = "none"
+    document.getElementById(sumir2).style.display = "none"
 }
 
 </script>
