@@ -14,7 +14,9 @@
 
     <header>
         <div class="container">
-            <img src="./imgs/logo.png" alt="">
+            <a href="index.html">
+                <img src="./imgs/logo.png" alt="">
+            </a>
         </div>
     </header>
 
@@ -31,7 +33,7 @@
                 <button onclick="showLess()">Return</button>
             </div>
         </div>
-        <div class="video_wrap" style="margin-bottom: 20vh;">
+        <div class="video_wrap">
             <video id="video_jdm" src="./imgs/video_jdm.mp4" autoplay muted loop></video>
             <div class="text_wrap" id="textShadow">
             </div>
@@ -39,6 +41,12 @@
             <h2 onclick="showMore()" id="more">+</h2>
         </div>
     </div>
+
+    <!-- Carros -->
+
+    <h2 class="titleClassics">Clássicos do <b style="color: red;">JDM</b></h2>
+
+    <!-- Supra -->
 
     <div class="container">
         <div class="carousel_wrap">
@@ -51,9 +59,9 @@
             </div>
         </div>
         <div id="menuBtnsSupra" class="menu">
-            <button onclick="showContent('motorSupra', 'specsSupra', 'historySupra')" class="btn_cadastro">Motor</button>
-            <button onclick="showContent('specsSupra', 'motorSupra', 'historySupra')" class="btn_cadastro">Specs</button>
-            <button onclick="showContent('historySupra', 'specsSupra', 'motorSupra')" class="btn_cadastro">História</button>
+            <button id="btnMotorSupra" onclick="showContent('motorSupra', 'specsSupra', 'historySupra', 'btnMotorSupra', 'btnSpecsSupra', 'btnHistorySupra')" class="btn_cadastro">Motor</button>
+            <button id="btnSpecsSupra" onclick="showContent('specsSupra', 'motorSupra', 'historySupra', 'btnSpecsSupra', 'btnHistorySupra', 'btnMotorSupra')" class="btn_cadastro">Specs</button>
+            <button id="btnHistorySupra" onclick="showContent('historySupra', 'specsSupra', 'motorSupra', 'btnHistorySupra', 'btnMotorSupra', 'btnSpecsSupra')" class="btn_cadastro">História</button>
         </div>
         <div class="containerContentCars">
             <div id="motorSupra" class="conteudo">
@@ -68,15 +76,19 @@
                     - Horsepower: 321 hp; <br>
                     - Torque: 315 lb-ft; <br>
                     - 0-60 mph: 4.7s; <br>
-                    - 1/4 mile: 13.1s @109 mph; <br>
                     - Top Speed: 177 mph.
                 </span>
             </div>
             <div id="historySupra" class="conteudo">
-
+                <h2>História</h2>
+                <div class="wrapVideo">
+                    <iframe class="ytVideo" src="https://www.youtube.com/embed/PSsz3TjREK8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
             </div>
         </div>
     </div>
+
+    <!-- Rx7 -->
 
     <div style="flex-direction: row-reverse;" class="container">
         <div class="carousel_wrap">
@@ -89,11 +101,36 @@
             </div>
         </div>
         <div id="menuBtnsRx7" class="menu">
-            <button class="btn_cadastro">Motor</button>
-            <button class="btn_cadastro">Specs</button>
-            <button class="btn_cadastro">História</button>
+            <button id="btnMotorRx7" onclick="showContent('motorRx7', 'specsRx7', 'historyRx7', 'btnMotorRx7', 'btnSpecsRx7', 'btnHistoryRx7')" class="btn_cadastro">Motor</button>
+            <button id="btnSpecsRx7" onclick="showContent('specsRx7', 'motorRx7', 'historyRx7', 'btnSpecsRx7', 'btnHistoryRx7', 'btnMotorRx7')" class="btn_cadastro">Specs</button>
+            <button id="btnHistoryRx7" onclick="showContent('historyRx7', 'specsRx7', 'motorRx7', 'btnHistoryRx7', 'btnMotorRx7', 'btnSpecsRx7')" class="btn_cadastro">História</button>
+        </div>
+        <div class="containerContentCars">
+            <div id="motorRx7" class="conteudo esquerda">
+                <h2>2.6L 13b-REW V6</h2>
+                <img class="classMotor" src="imgs/rotary.png" alt="">
+            </div>
+            <div id="specsRx7" style="display: flex;" class="conteudo esquerda">
+                <h2>Specs</h2>
+                <span>
+                    - Engine: 2.6L 2 Rotary Twin Turbo; <br>
+                    - Transmission: 5-Speed Manual <br>
+                    - Horsepower: 261 hp; <br>
+                    - Torque: 217 ft-lb; <br>
+                    - 0-62 mph: 5.3 s; <br>
+                    - Top Speed: 155.34 mph.
+                </span>
+            </div>
+            <div id="historyRx7" class="conteudo esquerda">
+                <h2>História</h2>
+                <div class="wrapVideo">
+                    <iframe class="ytVideo" src="https://www.youtube.com/embed/cMF3C7TWIzw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
         </div>
     </div>
+
+    <!-- Trueno -->
 
     <div class="container">
         <div class="carousel_wrap">
@@ -106,11 +143,36 @@
             </div>
         </div>
         <div id="menuBtnsTrueno" class="menu">
-            <button class="btn_cadastro">Motor</button>
-            <button class="btn_cadastro">Specs</button>
-            <button class="btn_cadastro">História</button>
+            <button id="btnMotorTrueno" onclick="showContent('motorTrueno', 'specsTrueno', 'historyTrueno', 'btnMotorTrueno', 'btnSpecsTrueno', 'btnHistoryTrueno')" class="btn_cadastro">Motor</button>
+            <button id="btnSpecsTrueno" onclick="showContent('specsTrueno', 'motorTrueno', 'historyTrueno', 'btnSpecsTrueno', 'btnHistoryTrueno', 'btnMotorTrueno')" class="btn_cadastro">Specs</button>
+            <button id="btnHistoryTrueno" onclick="showContent('historyTrueno', 'specsTrueno', 'motorTrueno', 'btnHistoryTrueno', 'btnMotorTrueno', 'btnSpecsTrueno')" class="btn_cadastro">História</button>
+        </div>
+        <div class="containerContentCars">
+            <div id="motorTrueno" class="conteudo">
+                <h2>1.6L 4A-GE 20V</h2>
+                <img class="classMotor" src="imgs/4aGE.png" alt="">
+            </div>
+            <div id="specsTrueno" style="display: flex;" class="conteudo">
+                <h2>Specs</h2>
+                <span>
+                    - Engine: 1.6L 4A-GE 4 Cylinder Straight DOHC <br>
+                    - Transmission: 6-Speed Manual, or 4-Speed Automatic; <br>
+                    - Horsepower: 167 hp @ 7,400 RPM; <br>
+                    - Torque: 155 lb-ft @ 5,600 RPM; <br>
+                    - 0-62 mph: 8.3s; <br>
+                    - Top Speed: 122 mph.
+                </span>
+            </div>
+            <div id="historyTrueno" class="conteudo">
+                <h2>História</h2>
+                <div class="wrapVideo">
+                    <iframe class="ytVideo" src="https://www.youtube.com/embed/HBRy4-__oh0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
         </div>
     </div>
+
+    <!-- GTR -->
 
     <div style="flex-direction: row-reverse; border: none;" class="container">
         <div class="carousel_wrap">
@@ -123,9 +185,32 @@
             </div>
         </div>
         <div id="menuBtnsGTR" class="menu">
-            <button class="btn_cadastro">Motor</button>
-            <button class="btn_cadastro">Specs</button>
-            <button class="btn_cadastro">História</button>
+            <button id="btnMotorGTR" onclick="showContent('motorGTR', 'specsGTR', 'historyGTR', 'btnMotorGTR', 'btnSpecsGTR', 'btnHistoryGTR')" class="btn_cadastro">Motor</button>
+            <button id="btnSpecsGTR" onclick="showContent('specsGTR', 'motorGTR', 'historyGTR', 'btnSpecsGTR', 'btnHistoryGTR', 'btnMotorGTR')" class="btn_cadastro">Specs</button>
+            <button id="btnHistoryGTR" onclick="showContent('historyGTR', 'specsGTR', 'motorGTR', 'btnHistoryGTR', 'btnMotorGTR', 'btnSpecsGTR')" class="btn_cadastro">História</button>
+        </div>
+        <div class="containerContentCars">
+            <div id="motorGTR" class="conteudo esquerda">
+                <h2>2.6L RB26DETT V6 </h2>
+                <img class="classMotor" src="imgs/RB26.png" alt="">
+            </div>
+            <div id="specsGTR" style="display: flex;" class="conteudo esquerda">
+                <h2>Specs</h2>
+                <span>
+                    - Engine: In-line 6-cyl, twin-turbo; <br>
+                    - Transmission: 6-speed manual, four-wheel drive, active rear rear LSD; <br>
+                    - Horsepower: 276 bhp; <br>
+                    - Torque: 289 lb-ft; <br>
+                    - 0-60 mph: 4.8sec; <br>
+                    - Top Speed: 165 mph.
+                </span>
+            </div>
+            <div id="historyGTR" class="conteudo esquerda">
+                <h2>História</h2>
+                <div class="wrapVideo">
+                    <iframe class="ytVideo" src="https://www.youtube.com/embed/u_z4aAT3F1w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -155,7 +240,7 @@
 <script src="funcoes.js"></script>
 
 <script>
-    
+
 // Modal Banner
 
 function showMore() {
@@ -206,7 +291,7 @@ function carro1(stockCar, iconicCar, btn_stock, btn_iconic, titleIconic, wdTitle
     document.getElementById(titleIconic).style.opacity = "0"
     setTimeout(() => {
         if (titleIconic == "iDAE86") {
-            document.getElementById(titleIconic).style.width = wdTitleShown
+            document.getElementById(titleIconic).style.width = wdTitleHidden
         } else {
             document.getElementById(titleIconic).style.fontSize = wdTitleHidden
             document.getElementById(titleIconic).style.display = "none"
@@ -216,15 +301,20 @@ function carro1(stockCar, iconicCar, btn_stock, btn_iconic, titleIconic, wdTitle
 
 // Menu
 
-function showContent(mostrar, sumir1, sumir2) {
-    document.getElementById(mostrar).style.display = "flex"
+function showContent(mostrar, sumir1, sumir2, clicado, rmvClicado1, rmvClicado2) {
+    document.getElementById(clicado).classList.add("btn_clicked")
+    document.getElementById(rmvClicado1).classList.remove("btn_clicked")
+    document.getElementById(rmvClicado2).classList.remove("btn_clicked")
     document.getElementById(sumir1).classList.remove("conteudoShown")
     document.getElementById(sumir2).classList.remove("conteudoShown")
     setTimeout(() => {
         document.getElementById(mostrar).classList.add("conteudoShown")
-    }, 50);
-    document.getElementById(sumir1).style.display = "none"
-    document.getElementById(sumir2).style.display = "none"
+    }, 200);
+    setTimeout(() => {
+        document.getElementById(mostrar).style.display = "flex"
+        document.getElementById(sumir1).style.display = "none"
+        document.getElementById(sumir2).style.display = "none"
+    }, 100);
 }
 
 </script>

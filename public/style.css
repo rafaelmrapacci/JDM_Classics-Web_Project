@@ -28,6 +28,10 @@
     box-sizing: border-box;
 }
 
+#detach-button-host {
+    display: none !important;
+}
+
 /* Index - Header/Footer */
 
 body {
@@ -191,6 +195,8 @@ footer {
 
 .banner video {
     width: 100vw;
+    height: 100vh;
+    object-fit: cover;
     position: absolute;
     top: 0;
     left: 0;
@@ -199,8 +205,25 @@ footer {
 }
 
 .video_wrap {
-    height: 110vh;
+    height: 100vh;
     width: 100%;
+}
+
+.titleClassics {
+    height: 10vh;
+    font-family: 'Osaka';
+    font-size: 8vh;
+    text-align: center;
+    color: white;
+    text-shadow: 
+    2px 2px 0 black,
+    2px -2px 0 black,
+    -2px 2px 0 black,
+    -2px -2px 0 black,
+    2px 0px 0 black,
+    0px 2px 0 black,
+    -2px 0px 0 black,
+    0px -2px 0 black;
 }
 
 .text_wrap {
@@ -374,7 +397,7 @@ footer {
     display: none;
     transition: 0.3s ease-in;
     position: absolute;
-    top: 218vh;
+    top: 198vh;
     left: 60%;
 }
 
@@ -383,7 +406,7 @@ footer {
     display: none;
     transition: 0.3s ease-in;
     position: absolute;
-    top: 295vh;
+    top: 275vh;
     left: 15%;
 }
 
@@ -403,7 +426,7 @@ footer {
     display: none;
     transition: 0.3s ease-in;
     position: absolute;
-    top: 357vh;
+    top: 339vh;
     left: 58%;
 }
 
@@ -471,6 +494,7 @@ footer {
     align-items: center;
 }
 
+
 .conteudo {
     height: 100%;
     width: 100%;
@@ -480,13 +504,25 @@ footer {
     align-items: center;
     justify-content: center;
     position: relative;
-    transition: 0.4s ease;
+    transition: 0.3s ease;
     left: 50vw;
 }
 
 .conteudoShown {
-    left: 0;
+    left: 0 !important;
     opacity: 1;
+}
+
+.conteudo.esquerda {
+    left: -50vw
+}
+
+.wrapVideo {
+    height: 64%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .conteudo h2 {
@@ -517,10 +553,18 @@ footer {
     flex-direction: column;
     justify-content: center;
     line-height: 4vh;
+    cursor: default;
 }
 
 .classMotor {
     height: 64%;
+}
+
+.ytVideo {
+    box-shadow: 10px 10px 20px 5px rgb(0, 0, 0, 0.7); 
+    width: 80%; 
+    height: 70%;
+    border-radius: 20px;
 }
 
 /* Quiz */
@@ -686,6 +730,24 @@ footer {
 }
 
 .btn_cadastro:hover {
+    box-shadow:
+        0 0 0 4px black inset,
+        0 0 0 0px white,
+        0 0 0 6px white inset;
+    text-shadow:
+    2px 2px 0 black,
+    2px -2px 0 black,
+    -2px 2px 0 black,
+    -2px -2px 0 black,
+    2px 0px 0 black,
+    0px 2px 0 black,
+    -2px 0px 0 black,
+    0px -2px 0 black;
+    color: white;
+    background-color: red;
+}
+
+.btn_clicked {
     box-shadow:
         0 0 0 4px black inset,
         0 0 0 0px white,
