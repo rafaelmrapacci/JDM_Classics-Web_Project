@@ -1,7 +1,8 @@
 var express = require("express");
 var cors = require("cors");
 var path = require("path");
-// var PORTA = 8080;
+const host = '0.0.0.0';
+const port = process.env.PORT || 3000;
 
 var app = express();
 
@@ -15,6 +16,6 @@ app.use(cors());
 
 app.use("/mainRoutes", router);
 
-app.listen(5000, function () {
+app.listen(port, host, function () {
     console.log(`Servidor do seu site já está rodando! Acesse o caminho a seguir para visualizar: http://localhost:${5000}`);
 });
