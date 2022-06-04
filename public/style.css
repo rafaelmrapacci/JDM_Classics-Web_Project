@@ -10,11 +10,14 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz@8..144&display=swap');
 
-@import url('https://db.onlinewebfonts.com/c/f323892ea5283141dbbbec176c9e3ee7?family=Antique+Olive+BQ');
-
 @font-face {
     font-family: 'osaka';
     src: url(./fonts/osaka-re.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Antique Olive BQ';
+    src: url(./fonts/Antique\ Olive\ Nord\ Italic.ttf) format('truetype');
 }
 
 /* Reset CSS */
@@ -65,10 +68,15 @@ footer {
     justify-content: space-between;
     align-items: center;
     border-top: solid 2px black;
+    border-bottom: solid 2px #222125;
 }
 
-footer img {
-    height: 10vh;
+.gifzin {
+    height: 8vh;
+    border-radius: 10px;
+    border: solid 2px black;
+    box-shadow: 2px 2px 10px 2px black;
+    cursor: pointer;
 }
 
 .descFooter {
@@ -336,6 +344,11 @@ footer img {
     0px -2px 0 black;
     cursor: default;
     transition: 0.5s ease;
+}
+
+.container.menu {
+    width: 20%;
+    border: 1px solid red;
 }
 
 .classTopSupra {

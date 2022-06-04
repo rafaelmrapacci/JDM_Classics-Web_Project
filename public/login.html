@@ -63,16 +63,16 @@
             Projeto Individual desenvolvido por<br> 
             Rafael Macedo Rapacci
         </span>
-        <img src="imgs/logo.png" alt="">
+        <img class="gifzin" src="imgs/SimpleNeatDarklingbeetle-max-1mb.gif" alt="">
         <div class="socials">
-            <div class="wrapSocial" onclick="goTo('https://www.instagram.com/rafarapacci/')">
-                <img class="imgSocial" style="border-radius: 9px;" src="imgs/instagram.png" alt="" />
-            </div>
             <div class="wrapSocial" onclick="goTo('https://github.com/Rafael-Macedo-Rapacci')">
                 <img class="imgSocial" style="border-radius: 100%;" src="imgs/github.png" alt="" />
             </div>
             <div class="wrapSocial" onclick="goTo('https://www.linkedin.com/in/rafael-rapacci-00932b214/?originalSubdomain=br')">
-                <img class="imgSocial" style="border-radius: 5px;" src="imgs/linkedin.png" alt="" />
+                <img class="imgSocial" style="border-radius: 20%;" src="imgs/linkedin.png" alt="" />
+            </div>
+            <div class="wrapSocial">
+                <img class="imgSocial" style="border-radius: 30%;" src="imgs/instagram.png" alt="" />
             </div>
         </div>
     </footer>
@@ -97,38 +97,40 @@ function playSong() {
 }
 
 function entrar() {
+    document.body.style.cursor = "wait"
     var email = inp_email.value
     var senha = inp_senha.value
 
     if(email == "" || senha ==  "") {
+        document.body.style.cursor = "default"
         return abrirModal()
     }
 
     if (!email.includes("@") || !email.includes(".com")) {
+        document.body.style.cursor = "default"
         modalDesc.innerHTML = "Email Inválido!"
         return abrirModal()
     }
 
     fetch("/mainRoutes/entrar", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                emailServer: email,
-                senhaServer: senha
-            })
-        }).then(function (resposta) {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            emailServer: email,
+            senhaServer: senha
+        })
+    }).then(function (resposta) {
+        if (!resposta.ok) {
+            document.body.style.cursor = "default"
+            modalDesc.innerHTML = "E-Mail ou Senha inválidos!"
+            return abrirModal()
+        } else {
             resposta.json().then(json => {
-                if (!resposta.ok) {
-                    console.log("Deu resposta.ok false");
-                    modalDesc.innerHTML = "E-Mail ou Senha inválidos!"
-                    return abrirModal()
-                }
-                sessionStorage.emailUser = json.email
-                sessionStorage.nomeUser = json.nome
-                sessionStorage.fotoUser = json.urlFotoPerfil
-            })
+            sessionStorage.emailUser = json.email
+            sessionStorage.nomeUser = json.nome
+            sessionStorage.fotoUser = json.urlFotoPerfil
             modalTitle.innerHTML = "Sucesso!";
             modalDesc.innerHTML = "Login realizado com sucesso!";
             modalBottom.innerHTML = ""
@@ -139,11 +141,12 @@ function entrar() {
             setTimeout(() => {
                 window.location = "login.html"
             }, 3000);
-        })
-        .catch(function (erro) {
-        console.log(erro);
-        });     
-    }
-
+            })
+        }
+    })
+    .catch(function (erro) {
+    console.log(erro);
+    });     
+}
 
 </script>

@@ -77,16 +77,16 @@
             Projeto Individual desenvolvido por<br> 
             Rafael Macedo Rapacci
         </span>
-        <img src="imgs/logo.png" alt="">
+        <img class="gifzin" src="imgs/SimpleNeatDarklingbeetle-max-1mb.gif" alt="">
         <div class="socials">
-            <div class="wrapSocial" onclick="goTo('https://www.instagram.com/rafarapacci/')">
-                <img class="imgSocial" style="border-radius: 9px;" src="imgs/instagram.png" alt="" />
-            </div>
             <div class="wrapSocial" onclick="goTo('https://github.com/Rafael-Macedo-Rapacci')">
                 <img class="imgSocial" style="border-radius: 100%;" src="imgs/github.png" alt="" />
             </div>
             <div class="wrapSocial" onclick="goTo('https://www.linkedin.com/in/rafael-rapacci-00932b214/?originalSubdomain=br')">
-                <img class="imgSocial" style="border-radius: 5px;" src="imgs/linkedin.png" alt="" />
+                <img class="imgSocial" style="border-radius: 20%;" src="imgs/linkedin.png" alt="" />
+            </div>
+            <div class="wrapSocial">
+                <img class="imgSocial" style="border-radius: 30%;" src="imgs/instagram.png" alt="" />
             </div>
         </div>
     </footer>
@@ -100,6 +100,7 @@
 var once = false
 
     function cadastar() {
+        document.body.style.cursor = "wait"
         var nome = inp_nome.value
         var sobrenome = inp_sobrenome.value
         var email = inp_email.value
@@ -118,11 +119,13 @@ var once = false
 
         if (!email.includes("@") || !email.includes(".com")) {
             modalDesc.innerHTML = "Email Inválido!"
+            document.body.style.cursor = "default"
             return abrirModal()
         }
 
         if (!(senha == cSenha)) {
             modalDesc.innerHTML = "A confirmação de senha deve ser igual a senha inserida!"
+            document.body.style.cursor = "default"
             return abrirModal()
         }
 
@@ -141,6 +144,7 @@ var once = false
             resposta.json().then(json => {
                 if (!(json.idUsuario == "")) {
                     modalDesc.innerHTML = "E-Mail já cadastrado!"
+                    document.body.style.cursor = "default"
                     return abrirModal()
                 }
             })
