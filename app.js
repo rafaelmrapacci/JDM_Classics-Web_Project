@@ -15,6 +15,6 @@ app.use(cors());
 
 app.use("/mainRoutes", router);
 
-app.listen(8080, function () {
-    console.log(`Servidor do seu site já está rodando! Acesse o caminho a seguir para visualizar: http://localhost:${8080}`);
+app.listen(5000, function () {
+    console.log(`Servidor do seu site já está rodando! Acesse o caminho a seguir para visualizar: http://localhost:${5000}`);
 });
