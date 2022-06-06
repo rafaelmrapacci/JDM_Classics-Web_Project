@@ -122,15 +122,17 @@ function entrar() {
             senhaServer: senha
         })
     }).then(function (resposta) {
+        console.log(resposta);
         if (!resposta.ok) {
             document.body.style.cursor = "default"
             modalDesc.innerHTML = "E-Mail ou Senha inválidos!"
             return abrirModal()
         } else {
             resposta.json().then(json => {
-            sessionStorage.emailUser = json.email
-            sessionStorage.nomeUser = json.nome
-            sessionStorage.fotoUser = json.urlFotoPerfil
+            sessionStorage.setItem('idUser', json.idUsuario)
+            sessionStorage.setItem('emailUser', json.email)
+            sessionStorage.setItem('nomeUser', json.nome)
+            sessionStorage.setItem('fotoUser', json.urlFotoPerfil)
             modalTitle.innerHTML = "Sucesso!";
             modalDesc.innerHTML = "Login realizado com sucesso!";
             modalBottom.innerHTML = ""
@@ -139,7 +141,7 @@ function entrar() {
                 fecharModal()
             }, 2900);
             setTimeout(() => {
-                window.location = "login.html"
+                window.location = "index.html"
             }, 3000);
             })
         }

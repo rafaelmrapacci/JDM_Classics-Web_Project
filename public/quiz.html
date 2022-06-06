@@ -10,97 +10,302 @@
     <link rel="icon" href="./imgs/favicon.ico">
 </head>
 
-<body>
+<body style="background-color: #3c3c3c;">
 
     <header>
         <div class="container">
-            <img src="./imgs/logo.png" alt="">
+            <button id="buttonLeftNotLogged" onclick="goToPage('login')" class="btn_cadastro">Login</button>
+            <button style="display: none;" id="buttonLeftLogged" onclick="goToPage('index')" class="btn_cadastro">Home</button>
+            <a href="index.html">
+                <img src="./imgs/logo.png" alt="">
+            </a>
+            <button id="buttonRightNotLogged" onclick="goToPage('cadastro')" class="btn_cadastro">Cadastro</button>
+            <button style="display: none;" id="buttonRightLogged" onclick="sair()" class="btn_cadastro">Sair</button>
         </div>
     </header>
 
-    <div class="banner">
-        <div class="container form">
-            <div id="id_quiz" class="quiz">
-                <h3>Pergunta 1</h3>
-                <div class="questao">
-                    <span id="id_questao">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum velit illum non aut accusamus sint quod mollitia, perspiciatis, facilis aspernatur ratione voluptate unde, labore exercitationem necessitatibus cum laboriosam. Quisquam, fuga?</span>
-                </div>
-                <div onclick="alter1()" class="alt" id="alt1">a- teste</div>
-                <div onclick="alter2()" class="alt" id="alt2">b- teste</div>
-                <div onclick="alter3()" class="alt" id="alt3">c- teste</div>
-                <div onclick="alter4()" class="alt" id="alt4">d- teste</div>
+    <div class="bannerQuiz">
+
+        <div id="contMenu" class="container form direction">
+            <h1>Quiz</h1>
+            <h3>Descubra se você é o novo Braia, ou se tá sabendo legal.</h3>
+            <button style="font-size: 2.5vh;" class="btn_cadastro" onclick="openLeaderboards()">LeaderBoards</button>
+            <button class="btn_cadastro" onclick="openQuiz()">Iniciar</button>
+        </div>
+
+        <div id="contQuiz" style="display: none;" class="container form quizCont">
+        </div>
+    </div>
+
+    <footer>
+        <span class="descFooter">
+            Projeto Individual desenvolvido por<br> 
+            Rafael Macedo Rapacci
+        </span>
+        <img class="gifzin" src="imgs/SimpleNeatDarklingbeetle-max-1mb.gif" alt="">
+        <div class="socials">
+            <div class="wrapSocial" onclick="goTo('https://github.com/Rafael-Macedo-Rapacci')">
+                <img class="imgSocial" style="border-radius: 100%;" src="imgs/github.png" alt="" />
+            </div>
+            <div class="wrapSocial" onclick="goTo('https://www.linkedin.com/in/rafael-rapacci-00932b214/?originalSubdomain=br')">
+                <img class="imgSocial" style="border-radius: 20%;" src="imgs/linkedin.png" alt="" />
+            </div>
+            <div class="wrapSocial">
+                <img class="imgSocial" style="border-radius: 30%;" src="imgs/instagram.png" alt="" />
             </div>
         </div>
-        <button onclick="confirm1()">Confirmar Resposta</button>
-    </div>
+    </footer>
 
 </body>
 
-<script>
+<script src="funcoes.js"></script>
 
-var bancoDeQuestoes = [{
-    pergunta: "Qual o nome do meu tio?",
-    alternativas: ["A - Jose","B - Marcelo","C - Caio","D - Tio"],
-    correta: "D"
-},
-{
-    pergunta: "Qual o nome da minha tia?",
-    alternativas: ["A - Amanda","B - Diana","C - Tia","D - Calva"],
-    correta: "C"
-}
-]
+<script>
 
 var numeroAleatorio = []
 var questoesAleatorias = []
-
-for(var i = 0; i < 5;) {
-    var numeroAtual = parseInt(Math.random() * 29 + 0);
-    if (!numeroAleatorio.includes(numeroAtual)) {
-        numeroAleatorio.push(numeroAtual)
-        questoesAleatorias.push(bancoDeQuestoes[numeroAleatorio[i]])
-        i++
-    }
-}
-
-var resp1 = 0
+var respAtual = 0
 var pontuacao = 0
 
-id_questao.innerHTML = bancoDeQuestoes[0].pergunta
-alt1.innerHTML = bancoDeQuestoes[0].alternativas[0]
-alt2.innerHTML = bancoDeQuestoes[0].alternativas[1]
-alt3.innerHTML = bancoDeQuestoes[0].alternativas[2]
-alt4.innerHTML = bancoDeQuestoes[0].alternativas[3]
-
-function alter1() {
-    resp1 = bancoDeQuestoes[0].alternativas[0][0]
-    console.log(resp1)
+if (sessionStorage.emailUser != "") {
+    buttonLeftNotLogged.style.display = "none"
+    buttonLeftLogged.style.display = "block"
+    buttonRightNotLogged.style.display = "none"
+    buttonRightLogged.style.display = "block"
 }
 
-function alter2() {
-    resp1 = bancoDeQuestoes[0].alternativas[1][0]
-    console.log(resp1)
+let bancoDeQuestoes = [{
+    "pergunta": "Na primeira temporada da animação japonesa “InitialD”, é introduzido um time de corridas de rua chamado “Night Kids”, notório por sua presença e velocidade. Qual o carro dirigido pelo líder deste time? ",
+    "alternativas": ["A – Nissan 240sx ","B – Toyota Chaser ","C – Nissan Skyline R32 GT-R ","D – Lancer Evolution III "],
+    "correta": "C"
+},
+{
+    "pergunta": "No filme “Velozes e Furiosos 3: Desafio em Tóquio”, um dos trechos de diálogo mais famoso menciona um certo “DK”. Qual o significado da sigla, no filme? ",
+    "alternativas": ["A – Don Kars ","B – Doido Kong ","C – Drag Killer ","D – Drift King "],
+    "correta": "D"
+},
+{
+    "pergunta": "O Tuner Smokey Nagata é conhecido mundialmente por diversos de seus atos e de seus carros, um deles sendo sua façanha de atingir uma velocidade máxima de 197mph em uma avenida na Inglaterra, em seu: ",
+    "alternativas": ["A – Toyota Mk4 Supra ","B – Nissan Skyline R34 GT-R ","C – Porsche 911 Carrera GTS ","D – Nissan GT-R R35 "],
+    "correta": "A"
+},
+{
+    "pergunta": "Sendo um dos carros mais populares do movimento “JDM” o Toyota Supra é um dos carros mais valorizados no mercado de exportação atualmente. O carro, a partir de 1997 contava com um motor ____ de fábrica, que era capaz de gerar 230cv de potência. Qual alternativa preenche a lacuna acima? ",
+    "alternativas": ["A – 2.6L RB26DETT V6 ","B - 3.0L 2JZ GTE VVT-i V6 ","C – 3.8L VR38DETT V6 ","D – 2.6L 13b-REW TwinTurbo V6 "],
+    "correta": "B"
+},
+{
+    "pergunta": "No filme “Velozes e Furiosos 3: Desafio em Tóquio”, Hans possui um Mazda Rx7 com um body kit: ",
+    "alternativas": ["A – VeilSide ","B – Rocket Bunny ","C – Custom ","D – Liberty Walk "],
+    "correta": "A"
+},
+{
+    "pergunta": "Na animação japonesa InitialD, o protagonista Fujiwara Takumi tem sua primeira corrida contra o segundo no comando do time de corrida RedSuns, que dirige um:  ",
+    "alternativas": ["A – Mazda Rx7 ","B – Toyota Trueno ","C – Toyota Levin ","D – Lancer Evolution IV "],
+    "correta": "A"
+},
+{
+    "pergunta": "O Toyota Trueno é um carro conhecido mundialmente por ter sido utilizado pelo “Drift King” da vida real, Keiichi Tsuchiya. O carro, além de Toyota Trueno, é conhecido por diversos nomes. Qual dos nomes a seguir NÃO faz referência ao Toyota Trueno?  ",
+    "alternativas": ["A – Toyota Sprinter Trueno ","B – HachiRoku ","C – Toyota Panda  ","D – AE86 "],
+    "correta": "C"
+},
+{
+    "pergunta": "Qual o nome do estilo de carros e motos conhecido no Japão por sua extravagância e indomabilidade? ",
+    "alternativas": ["A – Yakuza ","B – Bosozoku ","C – Kamikaze ","D – Mugiwara "],
+    "correta": "B"
+},
+{
+    "pergunta": "Qual o significado da sigla “FD”? ",
+    "alternativas": ["A – Front Drive ","B – Fake Driver ","C – Formula Drift ","D – Final Destination "],
+    "correta": "C"
+},
+{
+    "pergunta": "O carro dirigido por Fujiwara Takumi em Initial D era originalmente um carro utilizado para a entrega de: ",
+    "alternativas": ["A – Peixe ","B – Encomendas ","C – Ovos ","D – Tofu "],
+    "correta": "D"
+},
+{
+    "pergunta": "O Auto-shop Liberty Walk ficou conhecido mundialmente pois suas modificações em carros exóticos foram consideradas ofensivas pelo público mais conservador. O carro modificado que gerou tal polêmica foi um: ",
+    "alternativas": ["A – Lamborghini Huracan ","B – Ferrari F40 ","C – Enzo Ferrari ","D – Paganni Zonda "],
+    "correta": "B"
+},
+{
+    "pergunta": "Atualmente, qual é o carro considerado ser o mais rápido do mundo? ",
+    "alternativas": ["A – SSC Tuatara ","B – Bugatti Chiron ","C – Ferrari 599X ","D – Koenigsegg Agera R "],
+    "correta": "A"
+}]
+
+function gerarQuiz() {
+    contQuiz.innerHTML = ""
+    respAtual = 0
+    pontuacao = 0
+    numeroAleatorio = []
+    questoesAleatorias = []
+
+    for(var i = 0; i < 5;) {
+        var numeroAtual = parseInt(Math.random() * 11 + 0);
+        if (!numeroAleatorio.includes(numeroAtual)) {
+            numeroAleatorio.push(numeroAtual)
+            questoesAleatorias.push(bancoDeQuestoes[numeroAleatorio[i]])
+            i++
+        }
+    }
+
+    console.log(questoesAleatorias);
+
+    for (var i = 0; i < questoesAleatorias.length; i++) {
+        contQuiz.innerHTML += `
+            <div id="id_quiz${i}" class="quiz quizHiddenRight">
+                <h3 style = "padding-left: 3%;">Pergunta ${i + 1}</h3>
+                <div class="questao">
+                    <span id="id_questao${i}"></span>
+                </div>
+                <div onclick="alter1(${i}), confirm(${i})" class="alt hoov" id="alt1${i}"></div>
+                <div onclick="alter2(${i}), confirm(${i})" class="alt hoov" id="alt2${i}"></div>
+                <div onclick="alter3(${i}), confirm(${i})" class="alt hoov" id="alt3${i}"></div>
+                <div onclick="alter4(${i}), confirm(${i})" class="alt hoov" id="alt4${i}"></div>
+            </div>
+            `
+        var questaoAtual = "id_questao" + i
+        var alt1Atual = "alt1" + i
+        var alt2Atual = "alt2" + i
+        var alt3Atual = "alt3" + i
+        var alt4Atual = "alt4" + i
+
+        document.getElementById(questaoAtual).innerHTML = questoesAleatorias[i].pergunta
+        document.getElementById(alt1Atual).innerHTML = questoesAleatorias[i].alternativas[0]
+        document.getElementById(alt2Atual).innerHTML = questoesAleatorias[i].alternativas[1]
+        document.getElementById(alt3Atual).innerHTML = questoesAleatorias[i].alternativas[2]
+        document.getElementById(alt4Atual).innerHTML = questoesAleatorias[i].alternativas[3]
+    }
+
+    id_quiz0.style.display = "flex"
+    id_quiz0.classList.remove("quizHiddenRight")
 }
 
-function alter3() {
-    resp1 = bancoDeQuestoes[0].alternativas[2][0]
-    console.log(resp1)
+function alter1(questaoAtual) {
+    respAtual = questoesAleatorias[questaoAtual].alternativas[0][0]
 }
 
-function alter4() {
-    resp1 = bancoDeQuestoes[0].alternativas[3][0]
-    console.log(resp1)
+function alter2(questaoAtual) {
+    respAtual = questoesAleatorias[questaoAtual].alternativas[1][0]
 }
 
-function confirm1() {
-    if (resp1 == bancoDeQuestoes[0].correta) {
-        id_quiz.style.backgroundColor = "green"
-        pontuacao++
-        console.log(pontuacao)
+function alter3(questaoAtual) {
+    respAtual = questoesAleatorias[questaoAtual].alternativas[2][0]
+}
+
+function alter4(questaoAtual) {
+    respAtual = questoesAleatorias[questaoAtual].alternativas[3][0]
+}
+
+function confirm(questaoAtual) {
+        var perguntaAtual = "id_quiz" + questaoAtual
+        var proxPergunta = "id_quiz" + (questaoAtual + 1)
+        if (respAtual == questoesAleatorias[questaoAtual].correta) {
+            pontuacao++
+            changeColors(questaoAtual, perguntaAtual)
+            changeQuestion(perguntaAtual, proxPergunta, questaoAtual)
+            setTimeout(() => {
+            if (questaoAtual == 4) {
+                sendResults(pontuacao)
+                showResuts(pontuacao)
+            }}, 1500);
+        } else {
+            changeColors(questaoAtual, perguntaAtual)
+            changeQuestion(perguntaAtual, proxPergunta, questaoAtual)
+            setTimeout(() => {
+            if (questaoAtual == 4) {
+                sendResults(pontuacao)
+                showResuts(pontuacao)
+            }}, 1500);
+        } 
+}
+
+function showResuts(pontuacao) {
+    var frase = ""
+    if (pontuacao == 0) {
+        frase = "Tá sabeno legal"
+    } else if (pontuacao == 1) {
+        frase = "Só 1? Meu irmãozinho de 10 anos conseguiu acertar mais."
+    } else if (pontuacao == 2) {
+        frase = "Tá quase lá, só falta 60% do caminho."
+    } else if (pontuacao == 3) {
+        frase = "Mais que a metade, já é um começo!"
+    } else if (pontuacao == 4) {
+        frase = "Esse aí já assistiu Carros pelo menos umas 3 vezes."
     } else {
-        id_quiz.style.backgroundColor = "red"
-        console.log(resp1, bancoDeQuestoes[0].correta)
+        frase = "Droga, é o Brian."
+    }
+    contQuiz.innerHTML = `
+    <div id="resultado" class="resultClass">
+        <h3 class="frase"> Você acertou </h3><br>
+        <h2 class="pont">${pontuacao} de 5 </h2><br>
+        <h3 class="frase">${frase}</h3>
+        <button style="font-size: 2.5vh;" class="btn_cadastro" onclick="openLeaderboards()">LeaderBoards</button>
+        <button style="font-size: 2.5vh;" class="btn_cadastro" onclick="openQuiz()">Tentar novamente</button>
+    </div>
+    `
+}
+
+function changeColors(questaoAtual, perguntaAtual) {
+    for (var i = 0; i < questoesAleatorias[questaoAtual].alternativas.length; i++) {
+        var altAtual = "alt" + (i + 1) + questaoAtual
+        if (questoesAleatorias[questaoAtual].alternativas[i][0] == questoesAleatorias[questaoAtual].correta) {
+            document.getElementById(altAtual).classList.remove("hoov")
+            document.getElementById(altAtual).classList.add("correta")
+        } else {
+            document.getElementById(altAtual).classList.remove("hoov")
+            document.getElementById(altAtual).classList.add("errada")
+        }
     }
 }
 
+function changeQuestion(perguntaAtual, proxPergunta, questaoAtual) {
+    setTimeout(() => {
+        document.getElementById(perguntaAtual).classList.add("quizHiddenLeft")
+        setTimeout(() => {
+            document.getElementById(perguntaAtual).style.display = "none"
+        }, 1000); 
+        if (questaoAtual < 4) {
+            setTimeout(() => {
+                document.getElementById(proxPergunta).style.display = "flex" 
+                setTimeout(() => {
+                    document.getElementById(proxPergunta).classList.remove("quizHiddenRight")
+                }, 10);
+            }, 1000);
+        }
+    }, 1500);
+}
+
+function openQuiz() {
+    gerarQuiz()
+    contMenu.style.opacity = "0"
+    setTimeout(() => {
+        contMenu.style.display = "none"
+        contQuiz.style.display = "flex"
+        setTimeout(() => {
+            contQuiz.style.opacity = "1"
+        }, 50);
+    }, 200);
+}
+
+function sendResults(resultado) {
+    fetch("/mainRoutes/enviarResultado", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            pontuacaoServer: pontuacao,
+            idUsuarioServer: sessionStorage.idUser
+        })
+    }).then(function (resposta) {
+
+    })
+    .catch(function (erro) {
+    console.log(erro);
+    });     
+}
 
 </script>

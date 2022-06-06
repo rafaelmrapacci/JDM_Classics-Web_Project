@@ -56,13 +56,18 @@ header .container {
     height: 10vh;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     background-color: #f1f1f1;
     border-bottom: solid 2px rgb(34, 33, 37, 0.3);
     border-radius: 5px;
     box-shadow: 0 2px 6px black;
     position: fixed;
     z-index: 9;
+}
+
+header .btn_cadastro {
+    box-shadow: none;
+    margin-top: 0;
 }
 
 footer {
@@ -239,7 +244,7 @@ footer {
     transition: 0.5s ease;
 }
 
-.banner h1 {
+.banner .tituloIndex {
     font-family: 'osaka';
     font-size: 10vh;
     position: absolute;
@@ -259,7 +264,7 @@ footer {
     transition: 0.5s ease;
 }
 
-.banner h1 b {
+.banner .tituloIndex b {
     font-size: 15vh;
     text-shadow: 
     2px 2px 0 black,
@@ -569,8 +574,82 @@ footer {
 
 /* Quiz */
 
+.questao {
+    height: 42%;
+    border: solid 2px black;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    padding: 0 3%;
+    font-family: 'Poppins';
+    font-size: 2vh;
+    background-color: #f1f1f1;
+    cursor: default;
+    box-shadow: inset 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
 .alt {
-    border: solid 1px red;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    border: solid 2px black;
+    border-radius: 10px;
+    padding-left: 3%;
+    font-family: 'Poppins';
+    font-size: 2vh;
+    background-color: #f1f1f1;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: inset 2px 2px 10px rgba(0, 0, 0, 0.1);
+    text-shadow:
+    1px 1px 0 gainsboro,
+    1px -1px 0 gainsboro,
+    -1px 1px 0 gainsboro,
+    -1px -1px 0 gainsboro,
+    1px 0px 0 gainsboro,
+    0px 1px 0 gainsboro,
+    -1px 0px 0 gainsboro,
+    0px -1px 0 gainsboro;
+}
+
+.hoov:hover {
+    border-color: red;
+    background-color: #d5d7db;
+    box-shadow: inset 1.2px 1.2px 20px #6c6d6f, inset -1.2px -1.2px 20px #b8b5b5;
+}
+
+.correta {
+    background-color: green;
+    text-shadow: none;
+    animation: pulseCorreta 1s linear;
+}
+
+.errada {
+    color: white;
+    background-color: red;
+    text-shadow: none;
+}
+
+@keyframes pulseCorreta {
+    20% {background-color: green;
+        color: white;}
+    40% {background-color: #f1f1f1;
+        color: black;}
+    60% {background-color: green;
+        color: white;}
+    80% {background-color: #f1f1f1;
+        color: black;}
+    99% {background-color: green;
+        color: white;}
+}
+
+.bannerQuiz {
+    width: 100%;
+    height: 90vh;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-self: center;
 }
 
 .container.form {
@@ -581,14 +660,88 @@ footer {
 .quiz {
     height: 70%;
     width: 60%;
-    border: solid 1px green;
-    display: flex;
+    border: solid 3px black;
+    border-radius: 20px;
+    display: none;
     flex-direction: column;
     justify-content: space-around;
+    position: relative;
+    left: 0;
+    transition: 0.6s;
+    padding: 1%;
+    background-color: #3C3C3C;
+}
+
+.quizHiddenRight {
+    left: 60vw;
+    opacity: 0;
+}
+
+.quizHiddenLeft {
+    left: -60vw;
+    opacity: 0;
 }
 
 .quiz h3 {
     font-size: 5vh;
+    height: 10%;
+    display: flex;
+    font-family: 'osaka';
+    color: black;
+    text-shadow:
+    2px 2px 0 white,
+    2px -2px 0 white,
+    -2px 2px 0 white,
+    -2px -2px 0 white,
+    2px 0px 0 white,
+    0px 2px 0 white,
+    -2px 0px 0 white,
+    0px -2px 0 white;
+}
+
+.container.form.direction {
+    display: flex;
+    flex-direction: column;
+    height: 70vh;
+    border-bottom: none;
+    background-color: #f1f1f1;
+    border-radius: 20px;
+    box-shadow: 10px 10px 30px black;
+    transition: 0.4s;
+}
+
+.container.form.quizCont {
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    width: 70vw;
+    border-bottom: none;
+    background-color: #f1f1f1;
+    border-radius: 20px;
+    box-shadow: 10px 10px 30px black;
+    transition: 0.4s;
+    opacity: 0;
+}
+
+.direction h1 {
+    font-size: 5vh;
+    height: 20%;
+    display: flex;
+    font-family: 'osaka';
+    color: red;
+    text-shadow:
+    2px 2px 0 black,
+    2px -2px 0 black,
+    -2px 2px 0 black,
+    -2px -2px 0 black,
+    2px 0px 0 black,
+    0px 2px 0 black,
+    -2px 0px 0 black,
+    0px -2px 0 black;
+}
+
+.direction h3 {
+    font-size: 3vh;
     height: 10%;
     display: flex;
     font-family: 'osaka';
@@ -604,13 +757,42 @@ footer {
     0px -2px 0 black;
 }
 
-.questao {
-    height: 30%;
-    border: solid 2px yellow;
+.frase {
+    font-size: 3vh;
+    font-family: 'osaka';
+    color: white;
+    text-shadow:
+    2px 2px 0 black,
+    2px -2px 0 black,
+    -2px 2px 0 black,
+    -2px -2px 0 black,
+    2px 0px 0 black,
+    0px 2px 0 black,
+    -2px 0px 0 black,
+    0px -2px 0 black;
 }
 
-.alt {
-    height: 13%;
+.pont {
+    height: 20%;
+    font-size: 6vh;
+    font-family: 'osaka';
+    color: red;
+    text-shadow:
+    2px 2px 0 black,
+    2px -2px 0 black,
+    -2px 2px 0 black,
+    -2px -2px 0 black,
+    2px 0px 0 black,
+    0px 2px 0 black,
+    -2px 0px 0 black,
+    0px -2px 0 black;
+}
+
+.resultClass {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Cadastro */

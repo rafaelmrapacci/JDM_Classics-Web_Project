@@ -14,9 +14,13 @@
 
     <header>
         <div class="container">
+            <button id="buttonLeftNotLogged" onclick="goToPage('login')" class="btn_cadastro">Login</button>
+            <button style="display: none;" id="buttonLeftLogged" onclick="goToPage('quiz')" class="btn_cadastro">Quiz</button>
             <a href="index.html">
                 <img src="./imgs/logo.png" alt="">
             </a>
+            <button id="buttonRightNotLogged" onclick="goToPage('cadastro')" class="btn_cadastro">Cadastro</button>
+            <button style="display: none;" id="buttonRightLogged" onclick="sair()" class="btn_cadastro">Sair</button>
         </div>
     </header>
 
@@ -37,7 +41,7 @@
             <video id="video_jdm" src="./imgs/video_jdm.mp4" autoplay muted loop></video>
             <div class="text_wrap" id="textShadow">
             </div>
-            <h1 id="title"><b style="color: red;">Japanese</b><br> Domestic Market</h1>
+            <h1 class="tituloIndex" id="title"><b style="color: red;">Japanese</b><br> Domestic Market</h1>
             <h2 onclick="showMore()" id="more">+</h2>
         </div>
     </div>
@@ -246,6 +250,13 @@
 <script src="funcoes.js"></script>
 
 <script>
+
+if (sessionStorage.emailUser != "") {
+    buttonLeftNotLogged.style.display = "none"
+    buttonLeftLogged.style.display = "block"
+    buttonRightNotLogged.style.display = "none"
+    buttonRightLogged.style.display = "block"
+}
 
 // Modal Banner
 

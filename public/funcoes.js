@@ -18,3 +18,14 @@ function fecharModal() {
 function goTo(site) {
     window.open(site)
 }
+
+function goToPage(pagina) {
+    window.location = `${pagina}.html`
+}
+
+function sair() {
+    window.location = "index.html"
+    sessionStorage.emailUser = ""
+    sessionStorage.nomeUser = ""
+    sessionStorage.fotoUser = ""
+}

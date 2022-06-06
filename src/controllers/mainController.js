@@ -122,8 +122,37 @@ function cadastrar(req, res) {
     }
 }
 
+function enviarResultado(req, res) {
+    var pontuacao = req.body.pontuacaoServer
+    var idUser = req.body.idUsuarioServer
+
+    if (pontuacao == undefined) {
+        res.status(400).send("Sua pontuacao está undefined!");
+    } else if (idUser == undefined) {
+        res.status(400).send("Seu ID está undefined!");
+    } else {
+        
+        mainModel.enviarResultado(pontuacao, idUser)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
 module.exports = {
     entrar,
     cadastrar,
-    verificar
+    verificar,
+    enviarResultado
 }
