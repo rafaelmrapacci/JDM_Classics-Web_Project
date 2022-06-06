@@ -1,5 +1,5 @@
-var local = 8080
-// var heroku = process.env.PORT || 3000;
+// var local = 8080
+var heroku = process.env.PORT || 3000;
 
 var express = require("express");
 var cors = require("cors");
@@ -18,6 +18,6 @@ app.use(cors());
 
 app.use("/mainRoutes", router);
 
-app.listen(local, host, function () {
-    console.log(`Servidor do seu site já está rodando! Acesse o caminho a seguir para visualizar: http://localhost:${local}`);
+app.listen(heroku, host, function () {
+    console.log(`Servidor do seu site já está rodando! Acesse o caminho a seguir para visualizar: http://localhost:${heroku}`);
 });
