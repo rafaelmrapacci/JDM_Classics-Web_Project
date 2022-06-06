@@ -150,9 +150,93 @@ function enviarResultado(req, res) {
     }
 }
 
+function getLeaders1(req, res) {
+    var idUser = req.params.idUser
+
+    if (idUser == undefined) {
+        res.status(400).send("idUsuario undefined")
+    } else {
+        mainModel.getLeaders1(idUser)
+            .then(
+                function(resultado) {
+                    res.json(resultado)
+                }
+            ).catch(
+                function(erro) {
+                    console.log(erro);
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
+function getLeaders2(req, res) {
+    var idUser = req.params.idUser
+
+    if (idUser == undefined) {
+        res.status(400).send("idUsuario undefined")
+    } else {
+        mainModel.getLeaders2(idUser)
+            .then(
+                function(resultado) {
+                    res.json(resultado)
+                }
+            ).catch(
+                function(erro) {
+                    console.log(erro);
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
+function getLeaders3(req, res) {
+    var idUser = req.params.idUser
+
+    if (idUser == undefined) {
+        res.status(400).send("idUsuario undefined")
+    } else {
+        mainModel.getLeaders3(idUser)
+            .then(
+                function(resultado) {
+                    res.json(resultado)
+                }
+            ).catch(
+                function(erro) {
+                    console.log(erro);
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
+function getLeaders4(req, res) {
+    var idUser = req.params.idUser
+
+    if (idUser == undefined) {
+        res.status(400).send("idUsuario undefined")
+    } else {
+        mainModel.getLeaders4(idUser)
+            .then(
+                function(resultado) {
+                    res.json(resultado)
+                }
+            ).catch(
+                function(erro) {
+                    console.log(erro);
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
 module.exports = {
     entrar,
     cadastrar,
     verificar,
-    enviarResultado
+    enviarResultado,
+    getLeaders1,
+    getLeaders2,
+    getLeaders3,
+    getLeaders4,
 }

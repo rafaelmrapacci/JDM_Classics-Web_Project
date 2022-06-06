@@ -38,9 +38,53 @@ function enviarResultado(pontuacao, idUser) {
     return database.executar(instrucao);
 }
 
+function getLeaders1(idUser) {
+    console.log("Acessou a main model, recebeu idUser:" + idUser);
+
+    var instrucao = `
+        select top 10 nome, sobrenome, round(avg(pontuacao),1) as MédiaAcertos from [dbo].[JDM_quiz] join [dbo].[JDM_usuario] on idUsuario = fkUsuario group by nome, sobrenome order by MédiaAcertos desc; 
+    `
+
+    return database.executar(instrucao);
+}
+
+function getLeaders2(idUser) {
+    console.log("Acessou a main model, recebeu idUser:" + idUser);
+
+    var instrucao = `
+        select top 10 nome, sobrenome, count(pontuacao) as qtdRespondidos from [dbo].[JDM_quiz] join [dbo].[JDM_usuario] on idUsuario = fkUsuario group by nome, sobrenome order by qtdRespondidos desc; 
+    `
+
+    return database.executar(instrucao);
+}
+
+function getLeaders3(idUser) {
+    console.log("Acessou a main model, recebeu idUser:" + idUser);
+
+    var instrucao = `
+        select count(pontuacao) as qtdRespondidoSeu, avg(pontuacao) as mediaQuizSeu from [dbo].[JDM_quiz] where fkUsuario = ${idUser} group by fkUsuario;
+    `
+
+    return database.executar(instrucao);
+}
+
+function getLeaders4(idUser) {
+    console.log("Acessou a main model, recebeu idUser:" + idUser);
+
+    var instrucao = `
+        select count(pontuacao) as qtdRespondidoTotal from [dbo].[JDM_quiz];
+    `
+
+    return database.executar(instrucao);
+}
+
 module.exports = {
     entrar,
     cadastrar,
     verificar,
-    enviarResultado
+    enviarResultado,
+    getLeaders1,
+    getLeaders2,
+    getLeaders3,
+    getLeaders4
 };

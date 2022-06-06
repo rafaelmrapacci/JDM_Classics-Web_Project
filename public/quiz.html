@@ -24,7 +24,7 @@
         </div>
     </header>
 
-    <div class="bannerQuiz">
+    <div id="idBanner" class="bannerQuiz">
 
         <div id="contMenu" class="container form direction">
             <h1>Quiz</h1>
@@ -34,6 +34,19 @@
         </div>
 
         <div id="contQuiz" style="display: none;" class="container form quizCont">
+        </div>
+
+        <div id="contLB" style="display: none; height: 100vh;" class="container form direction">
+            <img onclick="retornarLeader()" src="imgs/btnRetorno.png" class="btnRetorno" alt="">
+            <h2 class="titleLeads">LeaderBoards</h2>
+            <div class="containerLeads">
+                <div class="leadsLeft" id="topQtdRespond">
+                </div>
+                <div class="leadsCenter" id="topMedia">
+                </div>
+                <div class="leadsRight" id="qtdRespond">
+                </div>
+            </div>
         </div>
     </div>
 
@@ -281,6 +294,7 @@ function changeQuestion(perguntaAtual, proxPergunta, questaoAtual) {
 function openQuiz() {
     gerarQuiz()
     contMenu.style.opacity = "0"
+    idBanner.style.heigth = "90vh"
     setTimeout(() => {
         contMenu.style.display = "none"
         contQuiz.style.display = "flex"
@@ -288,6 +302,147 @@ function openQuiz() {
             contQuiz.style.opacity = "1"
         }, 50);
     }, 200);
+}
+
+function retornarLeader() {
+    idBanner.style.heigth = "90vh"
+    contLB.style.opacity = "0"
+    setTimeout(() => {
+        contLB.style.display = "none"
+        contMenu.style.display = "flex"
+        setTimeout(() => {
+            contMenu.style.opacity = "1"
+        }, 50);
+    }, 200);
+}
+
+function openLeaderboards() {
+    var top10qtd = []
+    var top10pont = []
+    var qtdQuizTotal = 0
+    var qtdQuizUser = 0
+    topQtdRespond.innerHTML = ""
+    topMedia.innerHTML = ""
+    qtdRespond.innerHTML = ""
+    contMenu.style.opacity = "0"
+    contQuiz.style.opacity = "0"
+    idBanner.style.height = "110vh"
+    setTimeout(() => {
+        contMenu.style.display = "none"
+        contQuiz.style.display = "none"
+        contLB.style.display = "flex"
+        setTimeout(() => {
+            contLB.style.opacity = "1"
+        }, 50);
+    }, 200);
+
+    fetch (`mainRoutes/getLeaders1/${sessionStorage.idUser}`, {cache: 'no-store'}).then(function (response) {
+        if (response.ok) {
+            response.json().then(function (resposta) {
+                top10qtd = resposta
+                console.log(top10qtd);
+                var contador = 1
+                topMedia.innerHTML = ` 
+                    <div class="titleEachLead">
+                        <h3>Maior média de acertos</h3>
+                    </div>
+                    `
+                top10qtd.forEach(user => {
+                    topMedia.innerHTML += `
+                        <div class="contUsers">
+                            <div class="users">${contador} - ${user.nome} ${user.sobrenome}</div><div class="pontuacoes">${user.MédiaAcertos}</div>
+                        </div>
+                    `
+                    contador++
+                });
+            })
+        } else {
+            console.error('Nenhum dado encontrado na API');
+        }
+    })
+    .catch(function (error){ 
+        console.error(`Erro na obtenção dos dados ${error.mesage}`);
+    });
+
+    fetch (`mainRoutes/getLeaders2/${sessionStorage.idUser}`, {cache: 'no-store'}).then(function (response) {
+        if (response.ok) {
+            response.json().then(function (resposta) {
+                top10pont = resposta
+                console.log(top10pont);
+                var contador = 1
+                topQtdRespond.innerHTML = `
+                    <div class="titleEachLead">
+                       <h3>Mais quizzes respondidos</h3>
+                    </div>
+                    `
+                top10pont.forEach(user => {
+                    topQtdRespond.innerHTML += `
+                    <div class="contUsers">
+                        <div class="users">${contador} - ${user.nome} ${user.sobrenome}</div><div class="pontuacoes">${user.qtdRespondidos}</div>
+                    </div>
+                    `
+                    contador++
+                })
+            })
+        } else {
+            console.error('Nenhum dado encontrado na API');
+        }
+    })
+    .catch(function (error){ 
+        console.error(`Erro na obtenção dos dados ${error.mesage}`);
+    });
+
+    fetch (`mainRoutes/getLeaders3/${sessionStorage.idUser}`, {cache: 'no-store'}).then(function (response) {
+        if (response.ok) {
+            response.json().then(function (resposta) {
+                qtdQuizUser = resposta[0].qtdRespondidoSeu
+                mediaQuizUser = resposta[0].mediaQuizSeu
+                console.log(mediaQuizUser);
+                qtdRespond.innerHTML = `
+                    <div class="titleEachLead">
+                        <h3>Estatísticas</h3>
+                    </div>
+                `
+                qtdRespond.innerHTML += `
+                    <div class="statistics"> 
+                        Quantidade de quizzes respondidos por você: <br>
+                        <span class="metrica">${qtdQuizUser}</span>
+                    </div>
+                    <div class="statistics">
+                        Sua média de acertos: <br>
+                        <span class="metrica">${mediaQuizUser} de 5</span>
+                    </div>
+
+                `
+            })
+        } else {
+            console.error('Nenhum dado encontrado na API');
+        }
+    })
+    .catch(function (error){ 
+        console.error(`Erro na obtenção dos dados ${error.mesage}`);
+    });
+
+    fetch (`mainRoutes/getLeaders4/${sessionStorage.idUser}`, {cache: 'no-store'}).then(function (response) {
+        if (response.ok) {
+            response.json().then(function (resposta) {
+                qtdQuizTotal = resposta[0].qtdRespondidoTotal
+                console.log(qtdQuizTotal);
+                qtdRespond.innerHTML += `
+                    <div class="statistics">
+                        Quantidade total de quizzes respondidos:<br>
+                        <span class="metrica">${qtdQuizTotal}</span>
+                    </div>
+                    `
+            })
+        } else {
+            console.error('Nenhum dado encontrado na API');
+        }
+    })
+    .catch(function (error){ 
+        console.error(`Erro na obtenção dos dados ${error.mesage}`);
+    });
+
 }
 
 function sendResults(resultado) {

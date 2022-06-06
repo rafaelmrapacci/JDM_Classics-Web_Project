@@ -19,4 +19,20 @@ router.post("/enviarResultado", function (req, res) {
     controller.enviarResultado(req, res)
 });
 
+router.get("/getLeaders1/:idUser", function (req, res) {
+    controller.getLeaders1(req, res)
+});
+
+router.get("/getLeaders2/:idUser", function (req, res) {
+    controller.getLeaders2(req, res)
+});
+
+router.get("/getLeaders3/:idUser", function (req, res) {
+    controller.getLeaders3(req, res)
+});
+
+router.get("/getLeaders4/:idUser", function (req, res) {
+    controller.getLeaders4(req, res)
+});
+
 module.exports = router;

@@ -795,6 +795,172 @@ footer {
     align-items: center;
 }
 
+/* LeaderBoards */
+
+.titleLeads {
+    font-size: 5vh;
+    font-family: 'osaka';
+    color: red;
+    margin-top: 3%;
+    text-shadow:
+    2px 2px 0 black,
+    2px -2px 0 black,
+    -2px 2px 0 black,
+    -2px -2px 0 black,
+    2px 0px 0 black,
+    0px 2px 0 black,
+    -2px 0px 0 black,
+    0px -2px 0 black;
+}
+
+.btnRetorno {
+    height: 5vh;
+    position: absolute;
+    top: 21vh;
+    left: 10%;
+    transition: 0.4s ease;
+    border-radius: 100%;
+    box-shadow: 2px 2px 5px 2px rgb(0, 0, 0, 0.4);
+}
+
+.btnRetorno:hover {
+    height: 5.5vh;
+}
+
+.containerLeads {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contUsers {
+    width: 100%;
+    height: 8%;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    border: solid 2px black;
+    display: flex;
+    align-items: center;
+    padding: 1%;
+}
+
+.users {
+    width: 95%; 
+    float: left;
+    font-family: 'osaka';
+    font-size: 2vh;
+    height: 70%;
+    display: flex;
+    align-items: center;
+}
+
+.pontuacoes {
+    font-family: 'osaka';
+    font-size: 2vh;
+    height: 70%;
+    display: flex;
+    align-items: center;
+}
+
+.titleEachLead {
+    height: 15%;
+    width: 70%;
+    position: relative;
+    top: -9%;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    padding: 1%;
+    border: solid 2px black;
+    border-radius: 10px;
+    background-image: linear-gradient(to bottom right, #c0a30b, #ddc32f);
+}
+
+.titleEachLead h3 {
+    height: 100%;
+    text-align: center;
+    width: 70%;
+    align-items: center;
+}
+
+.statistics {
+    height: 27%;
+    font-family: 'osaka';
+    font-size: 2.5vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    border: solid 2px black;
+}
+
+.metrica {
+    font-size: 3vh;
+    color: red;
+    text-shadow:
+    2px 2px 0 black,
+    2px -2px 0 black,
+    -2px 2px 0 black,
+    -2px -2px 0 black,
+    2px 0px 0 black,
+    0px 2px 0 black,
+    -2px 0px 0 black,
+    0px -2px 0 black;
+}
+
+.leadsLeft {
+    height: 60%;
+    width: 25%;
+    border-radius: 20px;
+    border: solid 3px black;
+    background-image: linear-gradient(rgb(133, 0, 0), red);
+    padding: 2vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.leadsLeft .titleEachLead {
+    background-image: linear-gradient(to bottom right, rgb(133, 0, 0), red);
+}
+
+.leadsCenter {
+    height: 70%;
+    width: 30%;
+    border-radius: 20px;
+    border: solid 3px black;
+    background-image: linear-gradient(#c0a30b, #ddc32f);
+    padding: 2vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.leadsRight {
+    height: 60%;
+    width: 25%;
+    border-radius: 20px;
+    border: solid 3px black;
+    background-image: linear-gradient(rgb(0, 84, 0), green);
+    padding: 2vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.leadsRight .titleEachLead {
+    background-image: linear-gradient(to bottom right, rgb(0, 84, 0), green);
+}
+
 /* Cadastro */
 
 .container.cadastro {
