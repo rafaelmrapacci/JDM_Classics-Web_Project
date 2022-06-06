@@ -251,13 +251,13 @@
 
 <script>
 
-if (sessionStorage.emailUser != "") {
+if (sessionStorage.emailUser == "" || sessionStorage.emailUser == null) {
+} else {
     buttonLeftNotLogged.style.display = "none"
     buttonLeftLogged.style.display = "block"
     buttonRightNotLogged.style.display = "none"
     buttonRightLogged.style.display = "block"
 }
-
 // Modal Banner
 
 function showMore() {
