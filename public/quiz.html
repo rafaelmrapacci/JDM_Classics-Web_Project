@@ -428,12 +428,14 @@ function openLeaderboards() {
             response.json().then(function (resposta) {
                 qtdQuizTotal = resposta[0].qtdRespondidoTotal
                 console.log(qtdQuizTotal);
-                qtdRespond.innerHTML += `
-                    <div class="statistics">
-                        Quantidade total de quizzes respondidos:<br>
-                        <span class="metrica">${qtdQuizTotal}</span>
-                    </div>
-                    `
+                setTimeout(() => {
+                    qtdRespond.innerHTML += `
+                        <div class="statistics">
+                            Quantidade total de quizzes respondidos:<br>
+                            <span class="metrica">${qtdQuizTotal}</span>
+                        </div>
+                        `
+                }, 500);
             })
         } else {
             console.error('Nenhum dado encontrado na API');

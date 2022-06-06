@@ -135,8 +135,8 @@ footer {
     display: none;
     width: 60%;
     padding: 20px;
-    height: 70vh;
-    top: 12vh;
+    height: 80vh;
+    top: 5vh;
     left: 100vw;
     position: relative;
     z-index: 4;
@@ -150,7 +150,7 @@ footer {
 }
 
 .content {
-    height: 60vh;
+    height: 75vh;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -191,6 +191,7 @@ footer {
     font-size: 2.4vh;
     color: #222125;
     transition: 0.3s;
+    cursor: pointer;
 }
 
 .content button:hover {
