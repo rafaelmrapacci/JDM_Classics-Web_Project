@@ -58,13 +58,13 @@ function verificar(req, res) {
                     console.log(`Resultados: ${JSON.stringify(resultado)}`); 
 
                     if (resultado.length > 0) {
-                        console.log(resultado);
-                        res.json(resultado[0]);
+                        res.json({message: 'teste'}).status(200);
                     } else {
                         mainModel.cadastrar(nome, sobrenome, email, senha)
                         .then(
                             function (resultado) {
-                                res.json(resultado);
+                                console.log(resultado);
+                                res.json({ok: 'ok'});
                             }
                         ).catch(
                             function (erro) {
@@ -81,8 +81,8 @@ function verificar(req, res) {
             ).catch(
                 function (erro) {
                     console.log(erro);
-                    console.log("\nHouve um erro ao realizar a verificação! Erro: ", erro.sqlMessage);
-                    res.status(500).json(erro.sqlMessage);
+                    console.log("\nHouve um erro ao realizar a verificação! Erro: ", erro);
+                    res.status(500).json(erro);
                 }
             );
     }

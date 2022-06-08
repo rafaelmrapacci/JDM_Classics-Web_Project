@@ -1,179 +1,217 @@
 <!DOCTYPE html>
 <html lang="pt-BR, en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>JDM Classics - Cadastro</title>
+        <link rel="stylesheet" href="style.css" />
+        <link rel="icon" href="./imgs/favicon.ico" />
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JDM Classics - Cadastro</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="./imgs/favicon.ico">
-</head>
-
-<body style="background-color: #3c3c3c;">
-
-    <header>
-        <div class="container">
-            <a href="index.html">
-                <img src="./imgs/logo.png" alt="">
-            </a>
-        </div>
-    </header>
-
-    <div id="id_modal" class="modal">
-        <div id="id_content" class="contentModal">
-            <header class="modalHeader">
-                <h2 id="modalTitle">Erro!</h2>
-            </header>
+    <body style="background-color: #3c3c3c">
+        <header>
             <div class="container">
-                <p id="modalDesc">Preencha todos os campos para prosseguir!</p>
+                <a href="index.html">
+                    <img src="./imgs/logo.png" alt="" />
+                </a>
             </div>
-            <div id="modalBottom" class="modalFooter">
-                <button class="btn_cadastro btn_modal" onclick="fecharModal()">Fechar</button>
+        </header>
+
+        <div id="id_modal" class="modal">
+            <div id="id_content" class="contentModal">
+                <header class="modalHeader">
+                    <h2 id="modalTitle">Erro!</h2>
+                </header>
+                <div class="container">
+                    <p id="modalDesc">
+                        Preencha todos os campos para prosseguir!
+                    </p>
+                </div>
+                <div id="modalBottom" class="modalFooter">
+                    <button
+                        class="btn_cadastro btn_modal"
+                        onclick="fecharModal()"
+                    >
+                        Fechar
+                    </button>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div style="border: none" class="container cadastro">
-        <div class="formbox">
-            <div class="cont form">
-                <div id="id_form" class="formulario">
-                    <h2>Cadastro</h2>
+        <div style="border: none" class="container cadastro">
+            <div class="formbox">
+                <div class="cont form">
+                    <div id="id_form" class="formulario">
+                        <h2>Cadastro</h2>
                         <div class="wrap pair">
                             <div class="wrap">
                                 <span>Primeiro Nome:</span>
-                                <input type="text" id="inp_nome">
+                                <input type="text" id="inp_nome" />
                             </div>
                             <div class="wrap">
-                                <span style="margin-left: 10%;">Sobrenome:</span>
-                                <input style="margin-left: 10%;" type="text" id="inp_sobrenome">
+                                <span style="margin-left: 10%">Sobrenome:</span>
+                                <input
+                                    style="margin-left: 10%"
+                                    type="text"
+                                    id="inp_sobrenome"
+                                />
                             </div>
                         </div>
                         <div class="wrap">
                             <span>E-Mail:</span>
-                            <input type="text" id="inp_email">
+                            <input type="text" id="inp_email" />
                         </div>
                         <div class="wrap">
                             <span>Senha:</span>
-                            <input type="password" id="inp_senha">
+                            <input type="password" id="inp_senha" />
                         </div>
                         <div class="wrap">
                             <span>Confirmar senha:</span>
-                            <input type="password" id="inp_confSenha">
+                            <input type="password" id="inp_confSenha" />
                         </div>
-                        <button class="btn_cadastro" onclick="cadastar()">Confirmar</button>
+                        <button class="btn_cadastro" onclick="cadastar()">
+                            Confirmar
+                        </button>
+                    </div>
+                </div>
+                <div class="cont img">
+                    <img onclick="playSong()" src="imgs/truenoCad.png" alt="" />
+                    <audio id="IDcatch1" src="imgs/idCatch1.mp3"></audio>
+                    <audio id="IDcatch2" src="imgs/IDcatch2.mp3"></audio>
                 </div>
             </div>
-            <div class="cont img">
-                <img onclick="playSong()" src="imgs/truenoCad.png" alt="">
-                <audio id="IDcatch1" src="imgs/idCatch1.mp3"></audio>
-                <audio id="IDcatch2" src="imgs/IDcatch2.mp3"></audio>
-            </div>
         </div>
-    </div>
 
-    <footer>
-        <span class="descFooter">
-            Projeto Individual desenvolvido por<br> 
-            Rafael Macedo Rapacci
-        </span>
-        <img class="gifzin" src="imgs/SimpleNeatDarklingbeetle-max-1mb.gif" alt="">
-        <div class="socials">
-            <div class="wrapSocial" onclick="goTo('https://github.com/Rafael-Macedo-Rapacci')">
-                <img class="imgSocial" style="border-radius: 100%;" src="imgs/github.png" alt="" />
+        <footer>
+            <span class="descFooter">
+                Projeto Individual desenvolvido por<br />
+                Rafael Macedo Rapacci
+            </span>
+            <img
+                class="gifzin"
+                src="imgs/SimpleNeatDarklingbeetle-max-1mb.gif"
+                alt=""
+            />
+            <div class="socials">
+                <div
+                    class="wrapSocial"
+                    onclick="goTo('https://github.com/Rafael-Macedo-Rapacci')"
+                >
+                    <img
+                        class="imgSocial"
+                        style="border-radius: 100%"
+                        src="imgs/github.png"
+                        alt=""
+                    />
+                </div>
+                <div
+                    class="wrapSocial"
+                    onclick="goTo('https://www.linkedin.com/in/rafael-rapacci-00932b214/?originalSubdomain=br')"
+                >
+                    <img
+                        class="imgSocial"
+                        style="border-radius: 20%"
+                        src="imgs/linkedin.png"
+                        alt=""
+                    />
+                </div>
+                <div class="wrapSocial">
+                    <img
+                        class="imgSocial"
+                        style="border-radius: 30%"
+                        src="imgs/instagram.png"
+                        alt=""
+                    />
+                </div>
             </div>
-            <div class="wrapSocial" onclick="goTo('https://www.linkedin.com/in/rafael-rapacci-00932b214/?originalSubdomain=br')">
-                <img class="imgSocial" style="border-radius: 20%;" src="imgs/linkedin.png" alt="" />
-            </div>
-            <div class="wrapSocial">
-                <img class="imgSocial" style="border-radius: 30%;" src="imgs/instagram.png" alt="" />
-            </div>
-        </div>
-    </footer>
-</body>
+        </footer>
+    </body>
 </html>
 
 <script src="funcoes.js"></script>
 
 <script>
-
-var once = false
+    var once = false;
+    var jaCad = false;
 
     function cadastar() {
-        document.body.style.cursor = "wait"
-        var nome = inp_nome.value
-        var sobrenome = inp_sobrenome.value
-        var email = inp_email.value
-        var senha = inp_senha.value
-        var cSenha = inp_confSenha.value
+        document.body.style.cursor = "wait";
+        var nome = inp_nome.value;
+        var sobrenome = inp_sobrenome.value;
+        var email = inp_email.value;
+        var senha = inp_senha.value;
+        var cSenha = inp_confSenha.value;
 
         if (
             nome == "" ||
             sobrenome == "" ||
             email == "" ||
             senha == "" ||
-            cSenha == "" 
+            cSenha == ""
         ) {
-            document.body.style.cursor = "default"
-            return abrirModal()
+            document.body.style.cursor = "default";
+            return abrirModal();
         }
 
         if (!email.includes("@") || !email.includes(".com")) {
-            modalDesc.innerHTML = "Email Inválido!"
-            document.body.style.cursor = "default"
-            return abrirModal()
+            modalDesc.innerHTML = "Email Inválido!";
+            document.body.style.cursor = "default";
+            return abrirModal();
         }
 
         if (!(senha == cSenha)) {
-            modalDesc.innerHTML = "A confirmação de senha deve ser igual a senha inserida!"
-            document.body.style.cursor = "default"
-            return abrirModal()
+            modalDesc.innerHTML =
+                "A confirmação de senha deve ser igual a senha inserida!";
+            document.body.style.cursor = "default";
+            return abrirModal();
         }
 
         fetch("/mainRoutes/verificar", {
             method: "POST",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
             },
             body: JSON.stringify({
                 nomeServer: nome,
                 sobrenomeServer: sobrenome,
                 emailServer: email,
-                senhaServer: senha
-            })
-        }).then(function (resposta) {
-            resposta.json().then(json => {
-                if (!(json.idUsuario == "")) {
-                    modalDesc.innerHTML = "E-Mail já cadastrado!"
-                    document.body.style.cursor = "default"
-                    return abrirModal()
-                }
-            })
-            modalTitle.innerHTML = "Sucesso!";
-            modalDesc.innerHTML = "Cadastro realizado com sucesso!";
-            modalBottom.innerHTML = ""
-            abrirModal()
-            setTimeout(() => {
-                fecharModal()
-            }, 2900);
-            setTimeout(() => {
-                window.location = "login.html"
-            }, 3000);
+                senhaServer: senha,
+            }),
         })
-        .catch(function (erro) {
-        console.log(erro);
-        });     
+            .then(function (resposta) {
+                resposta.json().then((json) => {
+                    if (json.message) {
+                        modalDesc.innerHTML = "E-Mail já cadastrado!";
+                        document.body.style.cursor = "default";
+                        return abrirModal();
+                    } else {
+                        modalTitle.innerHTML = "Sucesso!";
+                        modalDesc.innerHTML = "Cadastro realizado com sucesso!";
+                        modalBottom.innerHTML = "";
+                        abrirModal();
+                        setTimeout(() => {
+                            fecharModal();
+                        }, 2900);
+                        setTimeout(() => {
+                            window.location = "login.html";
+                        }, 3000);
+                    }
+                });
+            })
+            .catch(function (erro) {
+                console.log(erro);
+            });
     }
 
     function playSong() {
-        IDcatch1.volume = 0.2
-        IDcatch2.volume = 0.2
+        IDcatch1.volume = 0.2;
+        IDcatch2.volume = 0.2;
         if (!once) {
-            IDcatch1.play()
+            IDcatch1.play();
         } else {
-            IDcatch2.play()            
+            IDcatch2.play();
         }
-        once = !once
+        once = !once;
     }
-
 </script>
